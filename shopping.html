@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+  (function () {
+    const theme = localStorage.getItem("theme");
+    if (theme === "dark") {
+document.documentElement.classList.add("dark-mode");
+    }
+  })();
+</script>
+
+    <title>shopping</title>
+        <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/all.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg bg-success navbar-custom fixed-top">
+  <div class="container-fluid">
+    <a class="navbar-brand me-2" href="#Home">Super Market 🛒</a>
+
+    <button id="themeToggle" class="btn btn-outline-light ms-3">🌙 </button>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link mx-1 active" href="index.html">Home</a></li>
+
+        <!-- Main Sections -->
+        <li class="nav-item dropdown">
+          <a class="nav-link mx-1 dropdown-toggle" href="#Main-Sections" data-bs-toggle="dropdown">Main </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item text-danger"  href="product.html#Vegetables-and-fruits">Vegetables & Fruits 🍎🥦</a></li>
+            <li><a class="dropdown-item text-danger" href="product.html#Meat-and-Poultry">Meat & Poultry 🍗🥩</a></li>
+            <li><a class="dropdown-item text-danger" href="product.html#Fish">Fish 🐟</a></li>
+            <li><a class="dropdown-item text-danger" href="product.html#Dairy-and-Cheese">Dairy & Cheese 🧀🥛</a></li>
+            <li><a class="dropdown-item text-danger" href="product.html#Baked-Goods">Baked goods 🍞🥐</a></li>
+            <li><a class="dropdown-item text-danger" href="product.html#Frozen-Foods">Frozen foods ❄️</a></li>
+          </ul>
+        </li>
+
+        <!-- Food Sections -->
+        <li class="nav-item dropdown">
+          <a class="nav-link mx-1 dropdown-toggle" href="#" data-bs-toggle="dropdown">Food </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item text-danger" href="product.html#Canned-Food">Canned food 🥫</a></li>
+            <li><a class="dropdown-item text-danger" href="product.html#Rice-Pasta-Pulses">Rice, Pasta & Pulses 🍚🍝</a></li>
+            <li><a class="dropdown-item text-danger" href="product.html#Oils-and-Butter">Oils & Butter</a></li>
+            <li><a class="dropdown-item text-danger" href="product.html#Sugar-and-Flour">Sugar & Flour</a></li>
+            <li><a class="dropdown-item text-danger" href="product.html#Spices-and-Herbs">Spices & Herbs 🌶️</a></li>
+          </ul>
+        </li>
+
+        <!-- Drinks -->
+        <li class="nav-item dropdown">
+          <a class="nav-link mx-1 dropdown-toggle" href="#" data-bs-toggle="dropdown">Drinks</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item text-danger" href="product.html#Juices">Juices 🧃</a></li>
+            <li><a class="dropdown-item text-danger" href="product.html#Water">Water 🥤</a></li>
+            <li><a class="dropdown-item text-danger" href="product.html#Carbonated-drinks">Carbonated Drinks 🍺</a></li>
+          </ul>
+        </li>
+
+        <!-- Cleaning -->
+        <li class="nav-item dropdown">
+          <a class="nav-link mx-1 dropdown-toggle" href="#" data-bs-toggle="dropdown">Cleaning & Care</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item text-danger" href="product.html#Household-cleaning">Household Cleaning 🧽</a></li>
+            <li><a class="dropdown-item text-danger" href="product.html#Personal-care">Personal Care 🧴</a></li>
+          </ul>
+        </li>
+
+        <!-- Additional -->
+        <li class="nav-item dropdown">
+          <a class="nav-link mx-1 dropdown-toggle" href="#" data-bs-toggle="dropdown">Additional</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item text-danger" href="product.html#Baby-essentials">Baby Essentials 👶</a></li>
+            <li><a class="dropdown-item text-danger" href="product.html#Pet-accessories">Pet Accessories 🐶🐱</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+  <!-- frist row -->
+   <section id="Main Sections">
+<div class="container text-center my-5">
+  <div class="row row-cols-1 row-cols-md-3 g-4 justify-content-center">
+    <h1 class="bg-success mb-5 w-100 py-2 pt-5">Main Sections</h1>
+
+    <!-- Card 1 -->
+    <div class="col d-flex justify-content-center">
+      <div class="card h-100" style="width: 18rem;">
+        <img src="./img/ve main.jpeg" class="card-img-top" alt="Vegetables-and-fruits">
+        <div class="card-body">
+          <h5 class="card-title">Vegetables and fruits 🍎🥦</h5>
+          <p class="card-text">
+            Vegetables are good for digestion.
+            Fruits and vegetables make our bodies active and healthy
+          </p>
+        </div>
+        <div class="m-auto">
+        <a href="product.html#Vegetables-and-fruits" class="btn btn-success btn-lg m-1 mb-3">Vegetables</a>
+        <a href="product.html#Vegetables-and-fruits" class="btn btn-success btn-lg m-1 mb-3">Fruits</a></div>
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="col d-flex justify-content-center">
+      <div class="card h-100" style="width: 18rem;">
+        <img src="./img/meat main.jpeg" class="card-img-top" alt="Meat and poultry">
+        <div class="card-body">
+          <h5 class="card-title">Meat and poultry 🍗🥩</h5>
+          <p class="card-text">
+            Poultry contains important vitamins.
+            Eating meat and poultry helps strengthen bones
+          </p>
+        </div>
+        <div class="m-auto">
+        <a href="product.html#Meat-and-Poultry" class="btn btn-success btn-lg m-1 mb-3">Meat</a>
+        <a href="product.html#Meat-and-Poultry" class="btn btn-success btn-lg m-1 mb-3">Poultry</a></div>
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="col d-flex justify-content-center">
+      <div class="card h-100" style="width: 18rem;">
+        <img src="./img/fishmain.jpeg" class="card-img-top" alt="Fish">
+        <div class="card-body">
+          <h5 class="card-title">Fish 🐟</h5>
+          <p class="card-text">
+            Fish is rich in Omega-3, which strengthens the heart.
+            Fish helps keep our eyes healthy.
+          </p>
+        </div>
+        <div class="m-auto">
+        <a href="product.html#Fish" class="btn btn-success btn-lg m-1 mb-3">Fish</a>
+        <a href="product.html#Fish" class="btn btn-success btn-lg m-1 mb-3">Sea food</a></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Second row -->
+<div class="container text-center my-5">
+  <div class="row row-cols-1 row-cols-md-3 g-4 justify-content-center">
+
+    <!-- Card 4 -->
+    <div class="col d-flex justify-content-center mb-5">
+      <div class="card h-100" style="width: 18rem;">
+        <img src="./img/dairy.jpeg" class="card-img-top" alt="Dairy and cheese">
+        <div class="card-body">
+          <h5 class="card-title">Dairy and cheese 🧀🥛</h5>
+          <p class="card-text">
+            Milk and cheese are rich in calcium, which strengthens bones and teeth.
+            Drinking milk helps children grow healthy.
+
+          </p>
+        </div>
+        <div class="m-auto">
+        <a href="product.html#Dairy-and-cheese" class="btn btn-success btn-lg m-1 mb-3">Dairy</a>
+        <a href="product.html#Dairy-and-cheese" class="btn btn-success btn-lg m-1 mb-3">cheese</a></div>
+      </div>
+    </div>
+
+    <!-- Card 5 -->
+    <div class="col d-flex justify-content-center mb-5">
+      <div class="card h-100" style="width: 18rem;">
+        <img src="./img/bakerymain.jpeg" class="card-img-top" alt="Baked goods">
+        <div class="card-body">
+          <h5 class="card-title">Baked goods 🍞🥐</h5>
+          <p class="card-text">
+            Baked goods are a source of carbohydrates and give energy to the body.
+          </p>
+        </div>
+        <div class="m-auto">
+        <a href="product.html#Baked-goods" class="btn btn-success btn-lg m-1 mb-3">Bread</a>
+        <a href="product.html#Baked-goods" class="btn btn-success btn-lg m-1 mb-3">Croissant</a></div>
+      </div>
+    </div>
+
+    <!-- Card 6 -->
+    <div class="col d-flex justify-content-center mb-5">
+      <div class="card h-100" style="width: 18rem;">
+        <img src="./img/frozzenmain.jpeg" class="card-img-top" alt="Frozen foods">
+        <div class="card-body">
+          <h5 class="card-title">Frozen foods ❄️</h5>
+          <p class="card-text">
+            Eating frozen fruits and vegetables helps maintain good health.
+
+        </div>
+        <div class="m-auto">
+        <a href="product.html#Frozen-foods " class="btn btn-success btn-lg m-1 mb-3">meat</a>
+        <a href="product.html#Frozen-foods " class="btn btn-success btn-lg m-1 mb-3 ">vegetable</a></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+</section>
+
+<!-- Third row -->
+ <section id="Food Sections">
+<div class="container text-center my-5">
+  <div class="row row-cols-1 row-cols-md-3 g-4 justify-content-center">
+    <h1 class="bg-success mb-5 mt-5 w-100 py-2">Food Sections</h1>
+
+    <!-- Card 7 -->
+    <div class="col d-flex justify-content-center">
+      <div class="card h-100" style="width: 18rem;">
+        <img src="./img/rice.jpeg" class="card-img-top" alt="Rice, pasta, pulses">
+        <div class="card-body">
+          <h5 class="card-title">Rice, pasta, and pulses 🍚🍝</h5>
+          <p class="card-text">
+            Eating rice, pasta, and pulses helps the body grow.
+            These foods give the body daily energy and activity.
+          </p>
+        </div>
+        <div class="m-auto">
+        <a href="product.html#Rice-Pasta-Pulses" class="btn btn-success btn-lg m-1 mb-3">Rice</a>
+        <a href="product.html#Rice-Pasta-Pulses" class="btn btn-success btn-lg m-1 mb-3">Pasta</a>
+        <a href="product.html#Rice-Pasta-Pulses" class="btn btn-success btn-lg m-1 mb-3">Pulses</a></div>
+      </div>
+    </div>
+
+    <!-- Card 8 -->
+    <div class="col d-flex justify-content-center">
+      <div class="card h-100" style="width: 18rem;">
+        <img src="./img/suger.jpeg" class="card-img-top" alt="Sugar and flour">
+        <div class="card-body">
+          <h5 class="card-title">Sugar and flour</h5>
+          <p class="card-text">
+            Sugar gives the body quick energy. Sugar and flour are basic ingredients in many foods.
+            Flour is used to make bread and baked goods. 
+          </p>
+        </div>
+        <div class="m-auto">
+        <a href="product.html#Sugar-and-Flour" class="btn btn-success btn-lg m-1 mb-3">Sugar</a>
+        <a href="product.html#Sugar-and-Flour" class="btn btn-success btn-lg m-1 mb-3">Flour</a></div>
+      </div>
+    </div>
+
+    <!-- Card 9 -->
+<div class="col d-flex justify-content-center">
+  <div class="card h-100" style="width: 18rem;">
+    <img src="./img/canned111.jpeg" class="card-img-top" alt="Canned food">
+
+    <div class="card-body d-flex flex-column">
+      <h5 class="card-title">Canned food 🥫</h5>
+
+      <p class="card-text">
+        Canned foods are useful when fresh food is not available.
+
+      </p>
+      <div class="mt-auto">
+        <a href="product.html#Canned-Food" class="btn btn-success btn-sm m-1 mb-3">Vegetarian </a>
+        <a href="product.html#Canned-Food" class="btn btn-success btn-sm m-1 mb-3">Animal</a>
+        <a href="product.html#Canned-Food" class="btn btn-success btn-sm m-1 mb-3">Processed</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+  </div>
+</div>
+
+<!-- Fourth row -->
+<div class="container text-center my-5">
+  <div class="row justify-content-center gap-4">
+
+    <!-- Card 10 -->
+    <div class="col-md-4 d-flex justify-content-center">
+      <div class="card text-center" style="width: 18rem;">
+        <img src="./img/oil.jpeg" class="card-img-top" alt="Oils and butter">
+        <div class="card-body">
+          <h5 class="card-title">Oils and butter</h5>
+          <p class="card-text">
+            Oils and butter give the body energy.
+            Healthy oils help protect the heart.
+
+          </p>
+        </div>
+        <div class="m-auto">
+        <a href="product.html#Oils-and-Butter" class="btn btn-success btn-lg m-2">Oil</a>
+        <a href="product.html#Oils-and-Butter" class="btn btn-success btn-lg m-2">Butter</a></div>
+      </div>
+    </div>
+
+    <!-- Card 11 -->
+    <div class="col-md-4 d-flex justify-content-center">
+      <div class="card text-center" style="width: 18rem;">
+        <img src="./img/harbs.jpeg" class="card-img-top" alt="Spices and herbs">
+        <div class="card-body">
+          <h5 class="card-title">Spices and herbs 🌶️</h5>
+          <p class="card-text">
+            Herbs add a great flavor to food.
+            Some herbs help with digestion.
+
+          </p>
+        </div>
+        <div class="m-auto">
+        <a href="product.html#Spices-and-Herbs" class="btn btn-success btn-lg m-1 mb-3">Spices</a>
+        <a href="product.html#Spices-and-Herbs" class="btn btn-success btn-lg m-1 mb-3">Herbs</a></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+</section>
+<section id="Drinks">
+<div class="container text-center my-5">
+  <h1 class="bg-success text-white mb-5 py-3">Drinks</h1>
+
+  <div class="row row-cols-1 row-cols-md-3 g-4 justify-content-center">
+
+    <!-- Card 7 -->
+    <div class="col d-flex justify-content-center">
+      <div class="card h-100" style="width: 18rem;">
+        <img src="./img/ju.jpeg" class="card-img-top" alt="Rice, pasta, pulses">
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title">Juices 🧃</h5>
+          <p class="card-text">
+Fresh and canned juices are a healthy way to stay refreshed.
+They provide vitamins, hydration, and natural energy for the body
+          </p>
+          <div class="mt-auto d-flex justify-content-center">
+            <a href="product.html#Juices" class="btn btn-success btn-lg m-1 mb-3">Fresh</a>
+            <a href="product.html#Juices" class="btn btn-success btn-lg m-1 mb-3">Canned</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 8 -->
+    <div class="col d-flex justify-content-center">
+      <div class="card h-100" style="width: 18rem;">
+        <img src="./img/water.jpeg" class="card-img-top" alt="Sugar and flour">
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title">Water 🥤</h5>
+          <p class="card-text">
+Drinking water is essential for good health.
+It helps keep the body hydrated and supports daily activities
+          </p>
+          <div class="mt-auto d-flex justify-content-center">
+            <a href="product.html#Water" class="btn btn-success btn-lg m-1 mb-3">Mineral</a>
+            <a href="product.html#Water" class="btn btn-success btn-lg m-1 mb-3">Soda</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 9 -->
+    <div class="col d-flex justify-content-center">
+      <div class="card h-100" style="width: 18rem;">
+        <img src="./img/drinks.jpeg" class="card-img-top" alt="Canned food">
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title">Carbonated drinks 🍺</h5>
+          <p class="card-text">
+Carbonated drinks are popular refreshing beverages.
+They are often enjoyed with meals or during social gatherings          </p>
+          <div class="mt-auto d-flex justify-content-center">
+            <a href="product.html#Carbonated-drinks" class="btn btn-success btn-lg m-1 mb-3">Special</a>
+            <a href="product.html#Carbonated-drinks" class="btn btn-success btn-lg m-1 mb-3">Soft</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+</section>
+<section id="Cleaning & Care">
+  <div class="container text-center my-5">
+    <h1 class="bg-success text-white mb-5 py-3">Cleaning & Care</h1>
+
+    <div class="row row-cols-1 row-cols-md-3 g-4 justify-content-center">
+
+      <!-- Card 1 -->
+      <div class="col-md-4 d-flex justify-content-center">
+        <div class="card text-center" style="width: 18rem;">
+          <img src="./img/11.jpeg" class="card-img-top" alt="Household Cleaning 🧽">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">Household Cleaning 🧽</h5>
+            <p class="card-text">
+              Household cleaning products 
+            </p>
+            <div class="d-flex flex-wrap justify-content-center mt-auto gap-2">
+              <a href="product.html#Household-cleaning" class="btn btn-success btn-sm">Surface Cleaners</a>
+              <a href="product.html#Household-cleaning" class="btn btn-success btn-sm">Laundry</a>
+              <a href="product.html#Household-cleaning" class="btn btn-success btn-sm">Dish Washing</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="col-md-4 d-flex justify-content-center">
+        <div class="card text-center" style="width: 18rem;">
+          <img src="./img/22.jpeg" class="card-img-top" alt="Personal Care 🧴">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">Personal Care 🧴</h5>
+            <p class="card-text">
+               care products help you be clean
+            </p>
+            <div class="d-flex flex-wrap justify-content-center mt-auto gap-2">
+              <a href="product.html#Personal-care" class="btn btn-success btn-sm">Shampoo</a>
+              <a href="product.html#Personal-care" class="btn btn-success btn-sm">Skin Care</a>
+              <a href="product.html#Personal-care" class="btn btn-success btn-sm">Soap & Body Wash</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="Additional Sections">
+  <div class="container text-center my-5">
+    <h1 class="bg-success text-white mb-5 py-3">Additional Sections</h1>
+
+    <div class="row row-cols-1 row-cols-md-3 g-4 justify-content-center">
+
+      <!-- Card 1 -->
+      <div class="col-md-4 d-flex justify-content-center">
+        <div class="card text-center" style="width: 18rem;">
+          <img src="./img/33.jpeg" class="card-img-top" alt="Baby Essentials 👶">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">Baby Essentials 👶</h5>
+            <p class="card-text">
+              Baby essentials ensure comfort, safety.
+            </p>
+            <div class="d-flex flex-wrap justify-content-center mt-auto gap-2">
+              <a href="product.html#Baby-essentials" class="btn btn-success btn-sm">Diapers</a>
+              <a href="product.html#Baby-essentials" class="btn btn-success btn-sm">Baby Care</a>
+              <a href="product.html#Baby-essentials" class="btn btn-success btn-sm">Baby Food</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="col-md-4 d-flex justify-content-center">
+        <div class="card text-center" style="width: 18rem;">
+          <img src="./img/44.jpeg" class="card-img-top" alt="Pet Accessories 🐶🐱">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">Pet Accessories 🐶🐱</h5>
+            <p class="card-text">
+              Because your pet deserves love.
+            </p>
+            <div class="d-flex flex-wrap justify-content-center mt-auto gap-2">
+              <a href="product.html#Pet-accessories" class="btn btn-success btn-sm">Pet Food</a>
+              <a href="product.html#Pet-accessories" class="btn btn-success btn-sm">Toys</a>
+              <a href="product.html#Pet-accessories" class="btn btn-success btn-sm mb-5">Beds & Accessories</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<footer class="footer">
+  <div class="footer-container">
+
+    <div class="footer-box about">
+      <h3>Fresh Mart</h3>
+      <p>Your daily needs, fresh and fast. We provide fresh products delivered right to your door.</p>
+    </div>
+
+    <div class="footer-box contact">
+      <h4>Contact Us</h4>
+      <ul>
+        <li>📍 Cairo, Egypt</li>
+        <li>📞 <a href="tel:01012345678">01012345678</a></li>
+        <li>✉ <a href="mailto:freshmart@gmail.com">freshmart@gmail.com</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-box hours">
+      <h4>Working Hours</h4>
+      <ul>
+        <li>Daily: 8 AM – 12 AM</li>
+        <li>Delivery Available</li>
+      </ul>
+    </div>
+
+    <div class="footer-box links">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Products</a></li>
+        <li><a href="#">Offers</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+  <p class="copy">© 2026 Fresh Mart. All Rights Reserved.</p>
+</footer>
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./js/theme.js"></script>
+
+    <script src="./js/start.js"></script>
+
+</body>
+</html>

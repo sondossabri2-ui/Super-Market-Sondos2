@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>
+  (function () {
+    const theme = localStorage.getItem("theme");
+    if (theme === "dark") {
+document.documentElement.classList.add("dark-mode");
+    }
+  })();
+</script>
+
+<title>Sondos Super Market</title>
+<link rel="stylesheet" href="./css/bootstrap.min.css">
+<link rel="stylesheet" href="./css/all.min.css">
+<link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+
+<!-- Navbar-->
+<nav class="navbar navbar-expand-lg bg-success navbar-custom fixed-top">
+  <div class="container-fluid">
+    <a class="navbar-brand me-2" href="#Home">Super Market 🛒</a>
+
+    <button id="themeToggle" class="btn btn-outline-light ms-3">🌙 </button>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link mx-1 active" href="index.html">Home</a></li>
+
+        <!-- Main Sections -->
+        <li class="nav-item dropdown">
+          <a class="nav-link mx-1 dropdown-toggle" href="#Main-Sections" data-bs-toggle="dropdown">Main </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item text-danger"  href="product.html#Vegetables-and-fruits">Vegetables & Fruits 🍎🥦</a></li>
+            <li><a class="dropdown-item text-danger" href="product.html#Meat-and-Poultry">Meat & Poultry 🍗🥩</a></li>
+            <li><a class="dropdown-item text-danger" href="product.html#Fish">Fish 🐟</a></li>
+            <li><a class="dropdown-item text-danger" href="product.html#Dairy-and-Cheese">Dairy & Cheese 🧀🥛</a></li>
+            <li><a class="dropdown-item text-danger" href="product.html#Baked-Goods">Baked goods 🍞🥐</a></li>
+            <li><a class="dropdown-item text-danger" href="product.html#Frozen-Foods">Frozen foods ❄️</a></li>
+          </ul>
+        </li>
+
+        <!-- Food Sections -->
+        <li class="nav-item dropdown">
+          <a class="nav-link mx-1 dropdown-toggle" href="#" data-bs-toggle="dropdown">Food </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item text-danger" href="product.html#Canned-Food">Canned food 🥫</a></li>
+            <li><a class="dropdown-item text-danger" href="product.html#Rice-Pasta-Pulses">Rice, Pasta & Pulses 🍚🍝</a></li>
+            <li><a class="dropdown-item text-danger" href="product.html#Oils-and-Butter">Oils & Butter</a></li>
+            <li><a class="dropdown-item text-danger" href="product.html#Sugar-and-Flour">Sugar & Flour</a></li>
+            <li><a class="dropdown-item text-danger" href="product.html#Spices-and-Herbs">Spices & Herbs 🌶️</a></li>
+          </ul>
+        </li>
+
+        <!-- Drinks -->
+        <li class="nav-item dropdown">
+          <a class="nav-link mx-1 dropdown-toggle" href="#" data-bs-toggle="dropdown">Drinks</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item text-danger" href="product.html#Juices">Juices 🧃</a></li>
+            <li><a class="dropdown-item text-danger" href="product.html#Water">Water 🥤</a></li>
+            <li><a class="dropdown-item text-danger" href="product.html#Carbonated-drinks">Carbonated Drinks 🍺</a></li>
+          </ul>
+        </li>
+
+        <!-- Cleaning -->
+        <li class="nav-item dropdown">
+          <a class="nav-link mx-1 dropdown-toggle" href="#" data-bs-toggle="dropdown">Cleaning & Care</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item text-danger" href="product.html#Household-cleaning">Household Cleaning 🧽</a></li>
+            <li><a class="dropdown-item text-danger" href="product.html#Personal-care">Personal Care 🧴</a></li>
+          </ul>
+        </li>
+
+        <!-- Additional -->
+        <li class="nav-item dropdown">
+          <a class="nav-link mx-1 dropdown-toggle" href="#" data-bs-toggle="dropdown">Additional</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item text-danger" href="product.html#Baby-essentials">Baby Essentials 👶</a></li>
+            <li><a class="dropdown-item text-danger" href="product.html#Pet-accessories">Pet Accessories 🐶🐱</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Home Section -->
+<section id="home">
+  <div class="home">
+    <div class="home1 text-center">
+      <h1 class=" text-white hero-title">Welcome to Sondos Super Market </h1>
+      <h2 class="text-white hero-sub">Your daily needs, fresh & fast</h2>
+      <a href="./shopping.html" class="btn btn-danger hero-btn">
+        Shopping Now
+      </a>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+<footer class="footer">
+  <div class="footer-container">
+
+    <div class="footer-box about">
+      <h3>Fresh Mart</h3>
+      <p>Your daily needs, fresh and fast. We provide fresh products delivered right to your door.</p>
+    </div>
+
+    <div class="footer-box contact">
+      <h4>Contact Us</h4>
+      <ul>
+        <li>📍 Cairo, Egypt</li>
+        <li>📞 <a href="tel:01012345678">01012345678</a></li>
+        <li>✉ <a href="mailto:freshmart@gmail.com">freshmart@gmail.com</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-box hours">
+      <h4>Working Hours</h4>
+      <ul>
+        <li>Daily: 8 AM – 12 AM</li>
+        <li>Delivery Available</li>
+      </ul>
+    </div>
+
+    <div class="footer-box links">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="#Home">Home</a></li>
+        <li><a href="product.html">Products</a></li>
+        <li><a href="product.html">Offers</a></li>
+        <li><a href="shopping.html">Contact</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+  <p class="copy">© 2026 Fresh Mart. All Rights Reserved.</p>
+</footer>
+
+
+
+
+<script src="./js/bootstrap.bundle.min.js"></script>
+<script src="./js/theme.js"></script>
+
+<script src="./js/start.js"></script>
+
+</body>
+</html>

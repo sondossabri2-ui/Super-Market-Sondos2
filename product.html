@@ -1,0 +1,2196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+  (function () {
+    const theme = localStorage.getItem("theme");
+    if (theme === "dark") {
+document.documentElement.classList.add("dark-mode");
+    }
+  })();
+</script>
+
+<title>Product</title>
+<link rel="stylesheet" href="./css/bootstrap.min.css">
+<link rel="stylesheet" href="./css/all.min.css">
+<link rel="stylesheet" href="./css/style.css"></head>
+<body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body>
+  <!-- Navbar-->
+<nav class="navbar navbar-expand-lg bg-success navbar-custom fixed-top">
+  <div class="container-fluid">
+    <a class="navbar-brand me-2" href="#Home">Super Market 🛒</a>
+
+    <button id="themeToggle" class="btn btn-outline-light ms-3">🌙 </button>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link mx-1 active" href="index.html">Home</a></li>
+
+        <!-- Main Sections -->
+        <li class="nav-item dropdown">
+          <a class="nav-link mx-1 dropdown-toggle" href="#Main-Sections" data-bs-toggle="dropdown">Main </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item text-danger"  href="product.html#Vegetables-and-fruits">Vegetables & Fruits 🍎🥦</a></li>
+            <li><a class="dropdown-item text-danger" href="product.html#Meat-and-Poultry">Meat & Poultry 🍗🥩</a></li>
+            <li><a class="dropdown-item text-danger" href="product.html#Fish">Fish 🐟</a></li>
+            <li><a class="dropdown-item text-danger" href="product.html#Dairy-and-Cheese">Dairy & Cheese 🧀🥛</a></li>
+            <li><a class="dropdown-item text-danger" href="product.html#Baked-Goods">Baked goods 🍞🥐</a></li>
+            <li><a class="dropdown-item text-danger" href="product.html#Frozen-Foods">Frozen foods ❄️</a></li>
+          </ul>
+        </li>
+
+        <!-- Food Sections -->
+        <li class="nav-item dropdown">
+          <a class="nav-link mx-1 dropdown-toggle" href="#" data-bs-toggle="dropdown">Food </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item text-danger" href="product.html#Canned-Food">Canned food 🥫</a></li>
+            <li><a class="dropdown-item text-danger" href="product.html#Rice-Pasta-Pulses">Rice, Pasta & Pulses 🍚🍝</a></li>
+            <li><a class="dropdown-item text-danger" href="product.html#Oils-and-Butter">Oils & Butter</a></li>
+            <li><a class="dropdown-item text-danger" href="product.html#Sugar-and-Flour">Sugar & Flour</a></li>
+            <li><a class="dropdown-item text-danger" href="product.html#Spices-and-Herbs">Spices & Herbs 🌶️</a></li>
+          </ul>
+        </li>
+
+        <!-- Drinks -->
+        <li class="nav-item dropdown">
+          <a class="nav-link mx-1 dropdown-toggle" href="#" data-bs-toggle="dropdown">Drinks</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item text-danger" href="product.html#Juices">Juices 🧃</a></li>
+            <li><a class="dropdown-item text-danger" href="product.html#Water">Water 🥤</a></li>
+            <li><a class="dropdown-item text-danger" href="product.html#Carbonated-drinks">Carbonated Drinks 🍺</a></li>
+          </ul>
+        </li>
+
+        <!-- Cleaning -->
+        <li class="nav-item dropdown">
+          <a class="nav-link mx-1 dropdown-toggle" href="#" data-bs-toggle="dropdown">Cleaning & Care</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item text-danger" href="product.html#Household-cleaning">Household Cleaning 🧽</a></li>
+            <li><a class="dropdown-item text-danger" href="product.html#Personal-care">Personal Care 🧴</a></li>
+          </ul>
+        </li>
+
+        <!-- Additional -->
+        <li class="nav-item dropdown">
+          <a class="nav-link mx-1 dropdown-toggle" href="#" data-bs-toggle="dropdown">Additional</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item text-danger" href="product.html#Baby-essentials">Baby Essentials 👶</a></li>
+            <li><a class="dropdown-item text-danger" href="product.html#Pet-accessories">Pet Accessories 🐶🐱</a></li>
+          </ul>
+        </li>
+      </ul>
+      <form class="d-flex search-box" role="search" id="search-form">
+  <input class="form-control" type="search" id="search-input" placeholder="Search products..." autoComplete="off" />
+  <button class="btn btn-dark ms-2" type="submit">
+    🔍
+  </button>
+</form>
+    </div>
+  </div>
+</nav>
+
+<!-- CART TOGGLE BUTTON (أيقونة السلة) -->
+<button id="cartToggle" class="cart-toggle">
+  🛒
+    <span id="cart-count">0</span>
+
+</button>
+
+<!-- ===== CART SIDEBAR ===== -->
+<div id="cartSidebar" class="cart-sidebar">
+
+  <button id="closeCart" class="close-cart">&times;</button>
+
+  <h3>Your Cart</h3>
+
+  <div id="cartItems" class="cart-items"></div>
+
+  <hr>
+
+  <div class="cart-total">
+    <strong>Total:</strong>
+    $<span id="cartTotal">0.00</span>
+  </div>
+
+<a id="checkoutBtn" href="Checkout.html" class="btn btn-success w-100 mt-3">
+  Checkout
+</a>
+</div>
+
+<!-- cards -->
+<section id="Vegetables-and-fruits">
+  <div class="container text-center my-5">
+    <h1 class="bg-success text-white mt-5 mb-5 py-3 pt-5">Vegetables and fruits 🍎🥦</h1>
+
+    <div class="row row-cols-1 row-cols-md-3 g-4 justify-content-center">
+
+      <!-- Card 1 -->
+      <div class="col d-flex justify-content-center">
+        <div class="product-card card h-100" style="width: 18rem; height: 28rem;">
+          <div class="card-img-container" style="height: 12rem; overflow: hidden;">
+            <img src="./img/v1.jpeg" alt="Bananas" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <div class="card-body d-flex flex-column">
+            <h5  class="card-title product-name">1. Bananas 🍌</h5>
+            <p>Rich in potassium, perfect for a healthy snack.</p>
+            <button class="btn btn-success mt-auto add-to-cart"  onclick="addToCart()"  data-name="Bananas" data-price="1.8" data-img="./img/v1.jpeg">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="col d-flex justify-content-center">
+        <div class="product-card card h-100" style="width: 18rem; height: 28rem;">
+          <div class="card-img-container" style="height: 12rem; overflow: hidden;">
+            <img src="./img/v2.jpeg" alt="Apples" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <div class="card-body d-flex flex-column">
+            <h5  class="card-title product-name">2. Apples 🍎</h5>
+            <p>Fresh and juicy apples, great for snacks and desserts.</p>
+            <button class="btn btn-success mt-auto add-to-cart"  onclick="addToCart()"  data-name="Apples" data-price="2.5" data-img="./img/v2.jpeg">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="col d-flex justify-content-center">
+        <div class="product-card card h-100" style="width: 18rem; height: 28rem;">
+          <div class="card-img-container" style="height: 12rem; overflow: hidden;">
+            <img src="./img/v3.jpeg" alt="Carrots" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <div class="card-body d-flex flex-column">
+            <h5  class="card-title product-name">3. Carrots 🥕</h5>
+            <p>Organic carrots, perfect for salads and cooking.</p>
+            <button class="btn btn-success mt-auto add-to-cart"  onclick="addToCart()"  data-name="Carrots" data-price="1.2" data-img="./img/v3.jpeg">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="col d-flex justify-content-center">
+        <div class="product-card card h-100" style="width: 18rem; height: 28rem;">
+          <div class="card-img-container" style="height: 12rem; overflow: hidden;">
+            <img src="./img/v4.jpeg" alt="Tomatoes" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <div class="card-body d-flex flex-column">
+            <h5  class="card-title product-name">4. Tomatoes 🍅</h5>
+            <p>Fresh tomatoes, ideal for salads, sauces, and cooking.</p>
+            <button class="btn btn-success mt-auto add-to-cart"  onclick="addToCart()"  data-name="Tomatoes" data-price="2.0" data-img="./img/v4.jpeg">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="col d-flex justify-content-center">
+        <div class="product-card card h-100" style="width: 18rem; height: 28rem;">
+          <div class="card-img-container" style="height: 12rem; overflow: hidden;">
+            <img src="./img/v5.jpeg" alt="Lettuce" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <div class="card-body d-flex flex-column">
+            <h5  class="card-title product-name">5. Lettuce 🥬</h5>
+            <p>Fresh green lettuce, perfect for sandwiches and salads.</p>
+            <button class="btn btn-success mt-auto add-to-cart"  onclick="addToCart()"  data-name="Lettuce" data-price="1.5" data-img="./img/v5.jpeg">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="col d-flex justify-content-center">
+        <div class="product-card card h-100" style="width: 18rem; height: 28rem;">
+          <div class="card-img-container" style="height: 12rem; overflow: hidden;">
+            <img src="./img/v6.jpeg" alt="Oranges" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <div class="card-body d-flex flex-column">
+            <h5  class="card-title product-name">6. Oranges 🍊</h5>
+            <p>Sweet and juicy oranges, perfect for juice and snacks.</p>
+            <button class="btn btn-success mt-auto add-to-cart"  onclick="addToCart()"  data-name="Oranges" data-price="3.0" data-img="./img/v6.jpeg">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <a href="./shopping.html" class="btn btn-outline-danger mt-5 mb-5">Back to shopping</a>
+  </div>
+</section>
+
+<section id="Meat-and-Poultry">
+  <div class="container text-center my-5">
+    <h1 class="bg-danger text-white mb-5 py-3">Meat and Poultry 🍗🥩</h1>
+
+    <div class="row row-cols-1 row-cols-md-3 g-4 justify-content-center">
+
+      <!-- Card 1 -->
+      <div class="col d-flex justify-content-center">
+        <div class="product-card card h-100" style="width: 18rem; height: 28rem;">
+          <div class="card-img-container" style="height: 12rem; overflow: hidden;">
+            <img src="./img/m1.jpeg" alt="Chicken Breast" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <div class="card-body d-flex flex-column">
+            <h5  class="card-title product-name">1. Chicken Breast 🍗</h5>
+            <p>Fresh boneless chicken breast, perfect for grilling and cooking.</p>
+            <button class="btn btn-success mt-auto add-to-cart"  onclick="addToCart()"  
+                    data-name="Chicken Breast" 
+                    data-price="5.0" 
+                    data-img="./img/m1.jpeg">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="col d-flex justify-content-center">
+        <div class="product-card card h-100" style="width: 18rem; height: 28rem;">
+          <div class="card-img-container" style="height: 12rem; overflow: hidden;">
+            <img src="./img/m2.jpeg" alt="Beef Steak" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <div class="card-body d-flex flex-column">
+            <h5  class="card-title product-name">2. Beef Steak 🥩</h5>
+            <p>Premium beef steak, ideal for grilling and roasting.</p>
+            <button class="btn btn-success mt-auto add-to-cart"  onclick="addToCart()"  
+                    data-name="Beef Steak" 
+                    data-price="12.0" 
+                    data-img="./img/m2.jpeg">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="col d-flex justify-content-center">
+        <div class="product-card card h-100" style="width: 18rem; height: 28rem;">
+          <div class="card-img-container" style="height: 12rem; overflow: hidden;">
+            <img src="./img/m3.jpeg" alt="Chicken Wings" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <div class="card-body d-flex flex-column">
+            <h5  class="card-title product-name">3. Chicken Wings 🍗</h5>
+            <p>Fresh chicken wings, perfect for frying or baking.</p>
+            <button class="btn btn-success mt-auto add-to-cart"  onclick="addToCart()"  
+                    data-name="Chicken Wings" 
+                    data-price="4.5" 
+                    data-img="./img/m3.jpeg">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="col d-flex justify-content-center">
+        <div class="product-card card h-100" style="width: 18rem; height: 28rem;">
+          <div class="card-img-container" style="height: 12rem; overflow: hidden;">
+            <img src="./img/m4.jpeg" alt="Lamb Chops" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <div class="card-body d-flex flex-column">
+            <h5  class="card-title product-name">4. Lamb Chops 🥩</h5>
+            <p>Fresh lamb chops, ideal for grilling and special dinners.</p>
+            <button class="btn btn-success mt-auto add-to-cart"  onclick="addToCart()"  
+                    data-name="Lamb Chops" 
+                    data-price="15.0" 
+                    data-img="./img/m4.jpeg">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="col d-flex justify-content-center">
+        <div class="product-card card h-100" style="width: 18rem; height: 28rem;">
+          <div class="card-img-container" style="height: 12rem; overflow: hidden;">
+            <img src="./img/m5.jpeg" alt="Turkey Breast" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <div class="card-body d-flex flex-column">
+            <h5  class="card-title product-name">5. Turkey Breast 🦃</h5>
+            <p>Lean turkey breast, perfect for sandwiches and roasting.</p>
+            <button class="btn btn-success mt-auto add-to-cart"  onclick="addToCart()"  
+                    data-name="Turkey Breast" 
+                    data-price="6.5" 
+                    data-img="./img/m5.jpeg">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <a href="./shopping.html" class="btn btn-outline-danger mt-5 mb-5">Back to shopping</a>
+  </div>
+</section>
+
+<section id="Fish">
+  <div class="container text-center my-5">
+    <h1 class="bg-info text-white mb-5 py-3">Fish 🐟</h1>
+
+    <div class="row row-cols-1 row-cols-md-3 g-4 justify-content-center">
+
+      <!-- Card 1 -->
+      <div class="col d-flex justify-content-center">
+        <div class="product-card card h-100" style="width: 18rem; height: 28rem;">
+          <div class="card-img-container" style="height:12rem; overflow:hidden;">
+            <img src="./img/f1.jpeg" alt="Salmon" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <div class="card-body d-flex flex-column">
+            <h5  class="card-title product-name">1. Salmon 🐟</h5>
+            <p>Fresh Atlantic salmon, rich in Omega-3, perfect for grilling.</p>
+            <button class="btn btn-success mt-auto add-to-cart"  onclick="addToCart()"  
+                    data-name="Salmon" 
+                    data-price="10.0" 
+                    data-img="./img/f1.jpeg">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="col d-flex justify-content-center">
+        <div class="product-card card h-100" style="width: 18rem; height: 28rem;">
+          <div class="card-img-container" style="height:12rem; overflow:hidden;">
+            <img src="./img/f2.jpeg" alt="Tuna" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <div class="card-body d-flex flex-column">
+            <h5  class="card-title product-name">2. Tuna 🐟</h5>
+            <p>Fresh tuna fillets, ideal for salads, sandwiches, or grilling.</p>
+            <button class="btn btn-success mt-auto add-to-cart"  onclick="addToCart()"  
+                    data-name="Tuna" 
+                    data-price="12.0" 
+                    data-img="./img/f2.jpeg">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="col d-flex justify-content-center">
+        <div class="product-card card h-100" style="width: 18rem; height: 28rem;">
+          <div class="card-img-container" style="height:12rem; overflow:hidden;">
+            <img src="./img/f3.jpeg" alt="Shrimp" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <div class="card-body d-flex flex-column">
+            <h5  class="card-title product-name">3. Shrimp 🍤</h5>
+            <p>Fresh shrimp, perfect for frying, grilling, or soups.</p>
+            <button class="btn btn-success mt-auto add-to-cart"  onclick="addToCart()"  
+                    data-name="Shrimp" 
+                    data-price="8.5" 
+                    data-img="./img/f3.jpeg">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="col d-flex justify-content-center">
+        <div class="product-card card h-100" style="width: 18rem; height: 28rem;">
+          <div class="card-img-container" style="height:12rem; overflow:hidden;">
+            <img src="./img/f4.jpeg" alt="Tilapia" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <div class="card-body d-flex flex-column">
+            <h5  class="card-title product-name">4. Tilapia 🐟</h5>
+            <p>Fresh tilapia fillets, great for baking or frying.</p>
+            <button class="btn btn-success mt-auto add-to-cart"  onclick="addToCart()"  
+                    data-name="Tilapia" 
+                    data-price="7.0" 
+                    data-img="./img/f4.jpeg">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="col d-flex justify-content-center">
+        <div class="product-card card h-100" style="width: 18rem; height: 28rem;">
+          <div class="card-img-container" style="height:12rem; overflow:hidden;">
+            <img src="./img/f5.jpeg" alt="Catfish" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <div class="card-body d-flex flex-column">
+            <h5  class="card-title product-name">5. Catfish 🐟</h5>
+            <p>Fresh catfish, perfect for frying, grilling, or stews.</p>
+            <button class="btn btn-success mt-auto add-to-cart"  onclick="addToCart()"  
+                    data-name="Catfish" 
+                    data-price="6.5" 
+                    data-img="./img/f5.jpeg">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="col d-flex justify-content-center">
+        <div class="product-card card h-100" style="width: 18rem; height: 28rem;">
+          <div class="card-img-container" style="height:12rem; overflow:hidden;">
+            <img src="./img/f6.jpeg" alt="Sardines" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <div class="card-body d-flex flex-column">
+            <h5  class="card-title product-name">6. Sardines 🐟</h5>
+            <p>Fresh sardines, rich in Omega-3, great for grilling or baking.</p>
+            <button class="btn btn-success mt-auto add-to-cart"  onclick="addToCart()"  
+                    data-name="Sardines" 
+                    data-price="5.0" 
+                    data-img="./img/f6.jpeg">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <a href="./shopping.html" class="btn btn-outline-danger mt-5 mb-5">Back to shopping</a>
+  </div>
+</section>
+
+<section id="Dairy-and-Cheese">
+  <div class="container text-center my-5">
+    <h1 class="bg-warning text-white mb-5 py-3">Dairy and Cheese 🧀🥛</h1>
+
+    <div class="row row-cols-1 row-cols-md-3 g-4 justify-content-center">
+
+      <!-- Card 1 -->
+      <div class="col d-flex justify-content-center">
+        <div class="product-card card h-100" style="width:18rem; height:28rem;">
+          <div class="card-img-container" style="height:12rem; overflow:hidden;">
+            <img src="./img/c1.jpeg" alt="Cheddar Cheese" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <div class="card-body d-flex flex-column">
+            <h5  class="card-title product-name">1. Cheddar Cheese 🧀</h5>
+            <p>Rich and flavorful cheddar, perfect for sandwiches and cooking.</p>
+            <button class="btn btn-success mt-auto add-to-cart"  onclick="addToCart()" 
+                    data-name="Cheddar Cheese"
+                    data-price="4.5"
+                    data-img="./img/c1.jpeg">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="col d-flex justify-content-center">
+        <div class="product-card card h-100" style="width:18rem; height:28rem;">
+          <div class="card-img-container" style="height:12rem; overflow:hidden;">
+            <img src="./img/c2.jpeg" alt="Mozzarella Cheese" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <div class="card-body d-flex flex-column">
+            <h5  class="card-title product-name">2. Mozzarella Cheese 🧀</h5>
+            <p>Soft and fresh mozzarella, ideal for pizzas and salads.</p>
+            <button class="btn btn-success mt-auto add-to-cart"  onclick="addToCart()" 
+                    data-name="Mozzarella Cheese"
+                    data-price="5.0"
+                    data-img="./img/c2.jpeg">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="col d-flex justify-content-center">
+        <div class="product-card card h-100" style="width:18rem; height:28rem;">
+          <div class="card-img-container" style="height:12rem; overflow:hidden;">
+            <img src="./img/c3.jpeg" alt="Milk" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <div class="card-body d-flex flex-column">
+            <h5  class="card-title product-name">3. Milk 🥛</h5>
+            <p>Fresh whole milk, rich in calcium and perfect for daily use.</p>
+            <button class="btn btn-success mt-auto add-to-cart"  onclick="addToCart()" 
+                    data-name="Milk"
+                    data-price="2.0"
+                    data-img="./img/c3.jpeg">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="col d-flex justify-content-center">
+        <div class="product-card card h-100" style="width:18rem; height:28rem;">
+          <div class="card-img-container" style="height:12rem; overflow:hidden;">
+            <img src="./img/c4.jpeg" alt="Yogurt" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <div class="card-body d-flex flex-column">
+            <h5  class="card-title product-name">4. Yogurt 🥛</h5>
+            <p>Fresh and creamy yogurt, ideal for breakfast and desserts.</p>
+            <button class="btn btn-success mt-auto add-to-cart"  onclick="addToCart()" 
+                    data-name="Yogurt"
+                    data-price="3.0"
+                    data-img="./img/c4.jpeg">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="col d-flex justify-content-center">
+        <div class="product-card card h-100" style="width:18rem; height:28rem;">
+          <div class="card-img-container" style="height:12rem; overflow:hidden;">
+            <img src="./img/c5.jpeg" alt="Butter" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <div class="card-body d-flex flex-column">
+            <h5  class="card-title product-name">5. Butter 🧈</h5>
+            <p>Rich creamy butter, perfect for cooking and baking.</p>
+            <button class="btn btn-success mt-auto add-to-cart"  onclick="addToCart()" 
+                    data-name="Butter"
+                    data-price="3.5"
+                    data-img="./img/c5.jpeg">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="col d-flex justify-content-center">
+        <div class="product-card card h-100" style="width:18rem; height:28rem;">
+          <div class="card-img-container" style="height:12rem; overflow:hidden;">
+            <img src="./img/c6.jpeg" alt="Cream Cheese" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <div class="card-body d-flex flex-column">
+            <h5  class="card-title product-name">6. Cream Cheese 🧀</h5>
+            <p>Soft and smooth cream cheese, perfect for spreads and baking.</p>
+            <button class="btn btn-success mt-auto add-to-cart"  onclick="addToCart()" 
+                    data-name="Cream Cheese"
+                    data-price="4.0"
+                    data-img="./img/c6.jpeg">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <a href="./shopping.html" class="btn btn-outline-danger mt-5 mb-5">Back to shopping</a>
+  </div>
+</section>
+
+<section id="Baked-Goods">
+  <div class="container text-center my-5">
+    <h1 class="bg-secondary text-white mb-5 py-3">Baked Goods 🥐🍞</h1>
+
+    <div class="row row-cols-1 row-cols-md-3 g-4 justify-content-center">
+
+      <!-- Card 1 -->
+      <div class="col d-flex justify-content-center">
+        <div class="product-card card h-100" style="width:18rem; height:28rem;">
+          <div class="card-img-container" style="height:12rem; overflow:hidden;">
+            <img src="./img/b1.jpeg" alt="Croissant" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <div class="card-body d-flex flex-column">
+            <h5  class="card-title product-name">1. Croissant 🥐</h5>
+            <p>Buttery and flaky croissants, perfect for breakfast or snacks.</p>
+            <button class="btn btn-success mt-auto add-to-cart"  onclick="addToCart()" 
+                    data-name="Croissant"
+                    data-price="2.0"
+                    data-img="./img/b1.jpeg">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="col d-flex justify-content-center">
+        <div class="product-card card h-100" style="width:18rem; height:28rem;">
+          <div class="card-img-container" style="height:12rem; overflow:hidden;">
+            <img src="./img/b2.jpeg" alt="Baguette" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <div class="card-body d-flex flex-column">
+            <h5  class="card-title product-name">2. Baguette 🍞</h5>
+            <p>Fresh French baguette, great for sandwiches and meals.</p>
+            <button class="btn btn-success mt-auto add-to-cart"  onclick="addToCart()" 
+                    data-name="Baguette"
+                    data-price="1.5"
+                    data-img="./img/b2.jpeg">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="col d-flex justify-content-center">
+        <div class="product-card card h-100" style="width:18rem; height:28rem;">
+          <div class="card-img-container" style="height:12rem; overflow:hidden;">
+            <img src="./img/b4.jpeg" alt="Muffin" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <div class="card-body d-flex flex-column">
+            <h5  class="card-title product-name">3. Muffin 🧁</h5>
+            <p>Sweet and soft muffins, perfect for tea or breakfast.</p>
+            <button class="btn btn-success mt-auto add-to-cart"  onclick="addToCart()" 
+                    data-name="Muffin"
+                    data-price="2.5"
+                    data-img="./img/b3.jpeg">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="col d-flex justify-content-center">
+        <div class="product-card card h-100" style="width:18rem; height:28rem;">
+          <div class="card-img-container" style="height:12rem; overflow:hidden;">
+            <img src="./img/b3.jpeg" alt="Bagel" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <div class="card-body d-flex flex-column">
+            <h5  class="card-title product-name">4. Bagel 🥯</h5>
+            <p>Soft and chewy bagels, perfect for breakfast with spreads.</p>
+            <button class="btn btn-success mt-auto add-to-cart"  onclick="addToCart()" 
+                    data-name="Bagel"
+                    data-price="1.8"
+                    data-img="./img/b4.jpeg">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="col d-flex justify-content-center">
+        <div class="product-card card h-100" style="width:18rem; height:28rem;">
+          <div class="card-img-container" style="height:12rem; overflow:hidden;">
+            <img src="./img/b5.jpeg" alt="Donut" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <div class="card-body d-flex flex-column">
+            <h5  class="card-title product-name">5. Donut 🍩</h5>
+            <p>Sweet glazed donuts, perfect for a snack or dessert.</p>
+            <button class="btn btn-success mt-auto add-to-cart"  onclick="addToCart()" 
+                    data-name="Donut"
+                    data-price="1.5"
+                    data-img="./img/b5.jpeg">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="col d-flex justify-content-center">
+        <div class="product-card card h-100" style="width:18rem; height:28rem;">
+          <div class="card-img-container" style="height:12rem; overflow:hidden;">
+            <img src="./img/b6.jpeg" alt="Cinnamon Roll" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <div class="card-body d-flex flex-column">
+            <h5  class="card-title product-name">6. Cinnamon Roll 🍥</h5>
+            <p>Warm and sweet cinnamon rolls, perfect for breakfast or tea.</p>
+            <button class="btn btn-success mt-auto add-to-cart"  onclick="addToCart()" 
+                    data-name="Cinnamon Roll"
+                    data-price="2.2"
+                    data-img="./img/b6.jpeg">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <a href="./shopping.html" class="btn btn-outline-danger mt-5 mb-5">Back to shopping</a>
+  </div>
+</section>
+
+<section id="Frozen-Foods">
+  <div class="container text-center my-5">
+    <h1 class="bg-primary text-white mb-5 py-3">Frozen Foods ❄️</h1>
+
+    <div class="row row-cols-1 row-cols-md-3 g-4 justify-content-center">
+
+      <!-- Card 1 -->
+      <div class="col d-flex justify-content-center">
+        <div class="product-card card h-100" style="width: 18rem; height: 28rem;">
+          <div class="card-img-container" style="height:12rem; overflow:hidden;">
+            <img src="./img/z1.jpeg" alt="Frozen Peas" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <div class="card-body d-flex flex-column">
+            <h5  class="card-title product-name">1. Frozen Peas ❄️</h5>
+            <p>Freshly frozen peas, perfect for cooking and soups.</p>
+            <button class="btn btn-success mt-auto add-to-cart"  onclick="addToCart()" 
+                    data-name="Frozen Peas"
+                    data-price="2.0"
+                    data-img="./img/z1.jpeg">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="col d-flex justify-content-center">
+        <div class="product-card card h-100" style="width: 18rem; height: 28rem;">
+          <div class="card-img-container" style="height:12rem; overflow:hidden;">
+            <img src="./img/z2.jpeg" alt="Frozen Corn" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <div class="card-body d-flex flex-column">
+            <h5  class="card-title product-name">2. Frozen Corn 🌽</h5>
+            <p>Sweet frozen corn kernels, ideal for salads and cooking.</p>
+            <button class="btn btn-success mt-auto add-to-cart"  onclick="addToCart()" 
+                    data-name="Frozen Corn"
+                    data-price="2.5"
+                    data-img="./img/z2.jpeg">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="col d-flex justify-content-center">
+        <div class="product-card card h-100" style="width: 18rem; height: 28rem;">
+          <div class="card-img-container" style="height:12rem; overflow:hidden;">
+            <img src="./img/z3.jpeg" alt="Frozen Mixed Vegetables" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <div class="card-body d-flex flex-column">
+            <h5  class="card-title product-name">3. Frozen Mixed Veggies ❄️</h5>
+            <p>Assorted frozen vegetables, perfect for stir-fries and soups.</p>
+            <button class="btn btn-success mt-auto add-to-cart"  onclick="addToCart()" 
+                    data-name="Frozen Mixed Veggies"
+                    data-price="3.0"
+                    data-img="./img/z3.jpeg">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="col d-flex justify-content-center">
+        <div class="product-card card h-100" style="width: 18rem; height: 28rem;">
+          <div class="card-img-container" style="height:12rem; overflow:hidden;">
+            <img src="./img/z4.jpeg" alt="Frozen Fish Fillets" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <div class="card-body d-flex flex-column">
+            <h5  class="card-title product-name">4. Frozen Fish Fillets 🐟</h5>
+            <p>Fresh frozen fish fillets, ideal for baking and frying.</p>
+            <button class="btn btn-success mt-auto add-to-cart"  onclick="addToCart()" 
+                    data-name="Frozen Fish Fillets"
+                    data-price="7.0"
+                    data-img="./img/z4.jpeg">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="col d-flex justify-content-center">
+        <div class="product-card card h-100" style="width: 18rem; height: 28rem;">
+          <div class="card-img-container" style="height:12rem; overflow:hidden;">
+            <img src="./img/z5.jpeg" alt="Frozen Pizza" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <div class="card-body d-flex flex-column">
+            <h5  class="card-title product-name">5. Frozen Pizza 🍕</h5>
+            <p>Delicious frozen pizza, ready to bake and enjoy.</p>
+            <button class="btn btn-success mt-auto add-to-cart"  onclick="addToCart()" 
+                    data-name="Frozen Pizza"
+                    data-price="5.5"
+                    data-img="./img/z5.jpeg">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="col d-flex justify-content-center">
+        <div class="product-card card h-100" style="width: 18rem; height: 28rem;">
+          <div class="card-img-container" style="height:12rem; overflow:hidden;">
+            <img src="./img/z6.jpeg" alt="Frozen Berries" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <div class="card-body d-flex flex-column">
+            <h5  class="card-title product-name">6. Frozen Berries 🍓</h5>
+            <p>Mixed frozen berries, perfect for smoothies and desserts.</p>
+            <button class="btn btn-success mt-auto add-to-cart"  onclick="addToCart()" 
+                    data-name="Frozen Berries"
+                    data-price="6.0"
+                    data-img="./img/z6.jpeg">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <a href="./shopping.html" class="btn btn-outline-danger mt-5 mb-5">Back to shopping</a>
+  </div>
+</section>
+
+
+<section id="Rice-Pasta-Pulses">
+  <div class="container text-center my-5">
+    <h1 class="bg-success text-white mb-5 py-3">Rice, Pasta, and Pulses 🍚🍝</h1>
+
+    <div class="row row-cols-1 row-cols-md-3 g-4 justify-content-center">
+
+      <!-- Card 1 -->
+      <div class="col d-flex justify-content-center">
+        <div class="product-card card h-100" style="width: 18rem; height: 28rem;">
+          <div class="card-img-container" style="height:12rem; overflow:hidden;">
+            <img src="./img/r1.jpeg" alt="Basmati Rice" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <div class="card-body d-flex flex-column">
+            <h5  class="card-title product-name">1. Basmati Rice 🍚</h5>
+            <p>Premium long-grain basmati rice, perfect for every meal.</p>
+            <button class="btn btn-success mt-auto add-to-cart"  onclick="addToCart()" 
+                    data-name="Basmati Rice"
+                    data-price="3.5"
+                    data-img="./img/r1.jpeg">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="col d-flex justify-content-center">
+        <div class="product-card card h-100" style="width: 18rem; height: 28rem;">
+          <div class="card-img-container" style="height:12rem; overflow:hidden;">
+            <img src="./img/r2.jpeg" alt="Spaghetti" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <div class="card-body d-flex flex-column">
+            <h5  class="card-title product-name">2. Spaghetti 🍝</h5>
+            <p>High-quality spaghetti pasta, ideal for all Italian dishes.</p>
+            <button class="btn btn-success mt-auto add-to-cart"  onclick="addToCart()" 
+                    data-name="Spaghetti"
+                    data-price="2.5"
+                    data-img="./img/r2.jpeg">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="col d-flex justify-content-center">
+        <div class="product-card card h-100" style="width: 18rem; height: 28rem;">
+          <div class="card-img-container" style="height:12rem; overflow:hidden;">
+            <img src="./img/r3.jpeg" alt="Lentils" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <div class="card-body d-flex flex-column">
+            <h5  class="card-title product-name">3. Lentils 🍲</h5>
+            <p>Organic red lentils, perfect for soups and stews.</p>
+            <button class="btn btn-success mt-auto add-to-cart"  onclick="addToCart()" 
+                    data-name="Lentils"
+                    data-price="3.0"
+                    data-img="./img/r3.jpeg">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="col d-flex justify-content-center">
+        <div class="product-card card h-100" style="width: 18rem; height: 28rem;">
+          <div class="card-img-container" style="height:12rem; overflow:hidden;">
+            <img src="./img/r4.jpeg" alt="Chickpeas" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <div class="card-body d-flex flex-column">
+            <h5  class="card-title product-name">4. Chickpeas 🥣</h5>
+            <p>Dried chickpeas, ideal for hummus, stews, and salads.</p>
+            <button class="btn btn-success mt-auto add-to-cart"  onclick="addToCart()" 
+                    data-name="Chickpeas"
+                    data-price="2.8"
+                    data-img="./img/r4.jpeg">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="col d-flex justify-content-center">
+        <div class="product-card card h-100" style="width: 18rem; height: 28rem;">
+          <div class="card-img-container" style="height:12rem; overflow:hidden;">
+            <img src="./img/r5.jpeg" alt="Brown Rice" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <div class="card-body d-flex flex-column">
+            <h5  class="card-title product-name">5. Brown Rice 🍚</h5>
+            <p>Healthy whole-grain brown rice, perfect for everyday meals.</p>
+            <button class="btn btn-success mt-auto add-to-cart"  onclick="addToCart()" 
+                    data-name="Brown Rice"
+                    data-price="4.0"
+                    data-img="./img/r5.jpeg">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="col d-flex justify-content-center">
+        <div class="product-card card h-100" style="width: 18rem; height: 28rem;">
+          <div class="card-img-container" style="height:12rem; overflow:hidden;">
+            <img src="./img/r6.jpeg" alt="Penne Pasta" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <div class="card-body d-flex flex-column">
+            <h5  class="card-title product-name">6. Penne Pasta 🍝</h5>
+            <p>Delicious penne pasta, ideal for baked dishes and sauces.</p>
+            <button class="btn btn-success mt-auto add-to-cart"  onclick="addToCart()" 
+                    data-name="Penne Pasta"
+                    data-price="2.7"
+                    data-img="./img/r6.jpeg">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <a href="./shopping.html" class="btn btn-outline-danger mt-5 mb-5">Back to shopping</a>
+  </div>
+</section>
+
+<section id="Sugar-and-Flour">
+  <div class="container text-center my-5">
+    <h1 class="bg-light text-dark mb-5 py-3">Sugar and Flour 🍚🥄</h1>
+
+    <div class="row row-cols-1 row-cols-md-3 g-4 justify-content-center">
+
+      <!-- Card 1 -->
+      <div class="col d-flex justify-content-center">
+        <div class="product-card card h-100" style="width: 18rem; height: 28rem;">
+          <div class="card-img-container" style="height:12rem; overflow:hidden;">
+            <img src="./img/s1.jpeg" alt="White Sugar" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <div class="card-body d-flex flex-column">
+            <h5  class="card-title product-name">1. White Sugar 🍚</h5>
+            <p>Refined white sugar, perfect for baking and beverages.</p>
+            <button class="btn btn-success mt-auto add-to-cart"  onclick="addToCart()" 
+                    data-name="White Sugar"
+                    data-price="2.0"
+                    data-img="./img/s1.jpeg">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="col d-flex justify-content-center">
+        <div class="product-card card h-100" style="width: 18rem; height: 28rem;">
+          <div class="card-img-container" style="height:12rem; overflow:hidden;">
+            <img src="./img/s2.jpeg" alt="Brown Sugar" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <div class="card-body d-flex flex-column">
+            <h5  class="card-title product-name">2. Brown Sugar 🍯</h5>
+            <p>Rich flavored brown sugar, ideal for desserts and baking.</p>
+            <button class="btn btn-success mt-auto add-to-cart"  onclick="addToCart()" 
+                    data-name="Brown Sugar"
+                    data-price="2.5"
+                    data-img="./img/s2.jpeg">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="col d-flex justify-content-center">
+        <div class="product-card card h-100" style="width: 18rem; height: 28rem;">
+          <div class="card-img-container" style="height:12rem; overflow:hidden;">
+            <img src="./img/s3.jpeg" alt="All-Purpose Flour" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <div class="card-body d-flex flex-column">
+            <h5  class="card-title product-name">3. All-Purpose Flour 🌾</h5>
+            <p>High-quality all-purpose flour, perfect for baking and cooking.</p>
+            <button class="btn btn-success mt-auto add-to-cart"  onclick="addToCart()" 
+                    data-name="All-Purpose Flour"
+                    data-price="3.0"
+                    data-img="./img/s3.jpeg">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="col d-flex justify-content-center">
+        <div class="product-card card h-100" style="width: 18rem; height: 28rem;">
+          <div class="card-img-container" style="height:12rem; overflow:hidden;">
+            <img src="./img/s4.jpeg" alt="Cake Flour" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <div class="card-body d-flex flex-column">
+            <h5  class="card-title product-name">4. Cake Flour 🍰</h5>
+            <p>Fine cake flour, ideal for soft and fluffy cakes.</p>
+            <button class="btn btn-success mt-auto add-to-cart"  onclick="addToCart()" 
+                    data-name="Cake Flour"
+                    data-price="3.5"
+                    data-img="./img/s4.jpeg">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="col d-flex justify-content-center">
+        <div class="product-card card h-100" style="width: 18rem; height: 28rem;">
+          <div class="card-img-container" style="height:12rem; overflow:hidden;">
+            <img src="./img/s5.jpeg" alt="Powdered Sugar" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <div class="card-body d-flex flex-column">
+            <h5  class="card-title product-name">5. Powdered Sugar 🍬</h5>
+            <p>Finely ground powdered sugar, perfect for frosting and desserts.</p>
+            <button class="btn btn-success mt-auto add-to-cart"  onclick="addToCart()" 
+                    data-name="Powdered Sugar"
+                    data-price="2.8"
+                    data-img="./img/s5.jpeg">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="col d-flex justify-content-center">
+        <div class="product-card card h-100" style="width: 18rem; height: 28rem;">
+          <div class="card-img-container" style="height:12rem; overflow:hidden;">
+            <img src="./img/s6.jpeg" alt="Whole Wheat Flour" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <div class="card-body d-flex flex-column">
+            <h5  class="card-title product-name">6. Whole Wheat Flour 🌾</h5>
+            <p>Healthy whole wheat flour, perfect for breads and pastries.</p>
+            <button class="btn btn-success mt-auto add-to-cart"  onclick="addToCart()" 
+                    data-name="Whole Wheat Flour"
+                    data-price="3.2"
+                    data-img="./img/s6.jpeg">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <a href="./shopping.html" class="btn btn-outline-danger mt-5 mb-5">Back to shopping</a>
+  </div>
+</section>
+<section id="Canned-Food">
+  <div class="container text-center my-5">
+    <h1 class="bg-warning text-dark mb-5 py-3">
+      Canned Food 🥫 (Vegetarian & Animal)
+    </h1>
+
+    <div class="row row-cols-1 row-cols-md-3 g-4 justify-content-center">
+
+      <!-- Card 1 -->
+      <div class="col d-flex justify-content-center">
+        <div class="product-card card h-100" style="width:18rem; height:28rem;">
+          <div class="card-img-container" style="height:12rem; overflow:hidden;">
+            <img src="./img/a1.jpeg" alt="Canned Beans" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <div class="card-body d-flex flex-column">
+            <h5  class="card-title product-name">Canned Beans 🌱</h5>
+            <p>Ready-to-use canned beans, rich in protein.</p>
+            <button class="btn btn-success mt-auto add-to-cart"  onclick="addToCart()" 
+                    data-name="Canned Beans"
+                    data-price="2.2"
+                    data-img="./img/a1.jpeg">
+              Add to Cart
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="col d-flex justify-content-center">
+        <div class="product-card card h-100" style="width:18rem; height:28rem;">
+          <div class="card-img-container" style="height:12rem; overflow:hidden;">
+            <img src="./img/a2.jpeg" alt="Canned Chickpeas" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <div class="card-body d-flex flex-column">
+            <h5  class="card-title product-name">Canned Chickpeas 🌱</h5>
+            <p>Perfect for salads, stews, and hummus.</p>
+            <button class="btn btn-success mt-auto add-to-cart"  onclick="addToCart()" 
+                    data-name="Canned Chickpeas"
+                    data-price="2.5"
+                    data-img="./img/a2.jpeg">
+              Add to Cart
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="col d-flex justify-content-center">
+        <div class="product-card card h-100" style="width:18rem; height:28rem;">
+          <div class="card-img-container" style="height:12rem; overflow:hidden;">
+            <img src="./img/a3.jpeg" alt="Canned Corn" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <div class="card-body d-flex flex-column">
+            <h5  class="card-title product-name">Canned Corn 🌽</h5>
+            <p>Sweet canned corn, great for cooking and salads.</p>
+            <button class="btn btn-success mt-auto add-to-cart"  onclick="addToCart()" 
+                    data-name="Canned Corn"
+                    data-price="1.8"
+                    data-img="./img/a3.jpeg">
+              Add to Cart
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="col d-flex justify-content-center">
+        <div class="product-card card h-100" style="width:18rem; height:28rem;">
+          <div class="card-img-container" style="height:12rem; overflow:hidden;">
+            <img src="./img/a4.jpeg" alt="Canned Tuna" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <div class="card-body d-flex flex-column">
+            <h5  class="card-title product-name">Canned Tuna 🐟</h5>
+            <p>High-quality canned tuna, rich in protein.</p>
+            <button class="btn btn-success mt-auto add-to-cart"  onclick="addToCart()" 
+                    data-name="Canned Tuna"
+                    data-price="5.0"
+                    data-img="./img/a4.jpeg">
+              Add to Cart
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="col d-flex justify-content-center">
+        <div class="product-card card h-100" style="width:18rem; height:28rem;">
+          <div class="card-img-container" style="height:12rem; overflow:hidden;">
+            <img src="./img/a5.jpeg" alt="Canned Sardines" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <div class="card-body d-flex flex-column">
+            <h5  class="card-title product-name">Canned Sardines 🐟</h5>
+            <p>Delicious canned sardines, ready to eat.</p>
+            <button class="btn btn-success mt-auto add-to-cart"  onclick="addToCart()" 
+                    data-name="Canned Sardines"
+                    data-price="4.2"
+                    data-img="./img/a5.jpeg">
+              Add to Cart
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="col d-flex justify-content-center">
+        <div class="product-card card h-100" style="width:18rem; height:28rem;">
+          <div class="card-img-container" style="height:12rem; overflow:hidden;">
+            <img src="./img/a6.jpeg" alt="Canned Chicken" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <div class="card-body d-flex flex-column">
+            <h5  class="card-title product-name">Canned Chicken 🍗</h5>
+            <p>Fully cooked canned chicken, perfect for quick meals.</p>
+            <button class="btn btn-success mt-auto add-to-cart"  onclick="addToCart()" 
+                    data-name="Canned Chicken"
+                    data-price="6.0"
+                    data-img="./img/a6.jpeg">
+              Add to Cart
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <a href="./shopping.html" class="btn btn-outline-danger mt-5 mb-5">
+      Back to shopping
+    </a>
+  </div>
+</section>
+
+<section id="Oils-and-Butter">
+  <div class="container text-center my-5">
+    <h1 class="bg-success text-white mb-5 py-3">
+      Oils and Butter 🧈🫒
+    </h1>
+
+    <div class="row row-cols-1 row-cols-md-3 g-4 justify-content-center">
+
+      <!-- Card 1 -->
+      <div class="col d-flex justify-content-center">
+        <div class="product-card card h-100" style="width:18rem; height:28rem;">
+          <div class="card-img-container" style="height:12rem; overflow:hidden;">
+            <img src="./img/ob1.jpeg" alt="Olive Oil" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <div class="card-body d-flex flex-column">
+            <h5  class="card-title product-name">Olive Oil 🫒</h5>
+            <p>Extra virgin olive oil, perfect for healthy cooking.</p>
+            <button class="btn btn-success mt-auto add-to-cart"  onclick="addToCart()" 
+                    data-name="Olive Oil"
+                    data-price="8.5"
+                    data-img="./img/ob1.jpeg">
+              Add to Cart
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="col d-flex justify-content-center">
+        <div class="product-card card h-100" style="width:18rem; height:28rem;">
+          <div class="card-img-container" style="height:12rem; overflow:hidden;">
+            <img src="./img/ob2.jpeg" alt="Sunflower Oil" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <div class="card-body d-flex flex-column">
+            <h5  class="card-title product-name">Sunflower Oil 🌻</h5>
+            <p>Light sunflower oil, ideal for frying and cooking.</p>
+            <button class="btn btn-success mt-auto add-to-cart"  onclick="addToCart()" 
+                    data-name="Sunflower Oil"
+                    data-price="6.0"
+                    data-img="./img/ob2.jpeg">
+              Add to Cart
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="col d-flex justify-content-center">
+        <div class="product-card card h-100" style="width:18rem; height:28rem;">
+          <div class="card-img-container" style="height:12rem; overflow:hidden;">
+            <img src="./img/ob3.jpeg" alt="Butter" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <div class="card-body d-flex flex-column">
+            <h5  class="card-title product-name">Butter 🧈</h5>
+            <p>Fresh dairy butter, perfect for baking and cooking.</p>
+            <button class="btn btn-success mt-auto add-to-cart"  onclick="addToCart()" 
+                    data-name="Butter"
+                    data-price="4.5"
+                    data-img="./img/ob3.jpeg">
+              Add to Cart
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="col d-flex justify-content-center">
+        <div class="product-card card h-100" style="width:18rem; height:28rem;">
+          <div class="card-img-container" style="height:12rem; overflow:hidden;">
+            <img src="./img/ob4.jpeg" alt="Margarine" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <div class="card-body d-flex flex-column">
+            <h5  class="card-title product-name">Margarine 🧈</h5>
+            <p>Processed margarine, ideal for spreading and cooking.</p>
+            <button class="btn btn-success mt-auto add-to-cart"  onclick="addToCart()" 
+                    data-name="Margarine"
+                    data-price="3.8"
+                    data-img="./img/ob4.jpeg">
+              Add to Cart
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="col d-flex justify-content-center">
+        <div class="product-card card h-100" style="width:18rem; height:28rem;">
+          <div class="card-img-container" style="height:12rem; overflow:hidden;">
+            <img src="./img/ob5.jpeg" alt="Corn Oil" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <div class="card-body d-flex flex-column">
+            <h5  class="card-title product-name">Corn Oil 🌽</h5>
+            <p>Refined corn oil, perfect for deep frying.</p>
+            <button class="btn btn-success mt-auto add-to-cart"  onclick="addToCart()" 
+                    data-name="Corn Oil"
+                    data-price="6.5"
+                    data-img="./img/ob5.jpeg">
+              Add to Cart
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="col d-flex justify-content-center">
+        <div class="product-card card h-100" style="width:18rem; height:28rem;">
+          <div class="card-img-container" style="height:12rem; overflow:hidden;">
+            <img src="./img/ob6.jpeg" alt="Ghee" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <div class="card-body d-flex flex-column">
+            <h5  class="card-title product-name">Ghee 🧈</h5>
+            <p>Pure clarified butter, ideal for cooking and frying.</p>
+            <button class="btn btn-success mt-auto add-to-cart"  onclick="addToCart()" 
+                    data-name="Ghee"
+                    data-price="7.5"
+                    data-img="./img/ob6.jpeg">
+              Add to Cart
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <a href="./shopping.html" class="btn btn-outline-danger mt-5 mb-5">
+      Back to shopping
+    </a>
+  </div>
+</section>
+
+<section id="Spices-and-Herbs">
+  <div class="container text-center my-5">
+    <h1 class="bg-danger text-white mb-5 py-3">
+      Spices and Herbs 🌶️🌿
+    </h1>
+
+    <div class="row row-cols-1 row-cols-md-3 g-4 justify-content-center">
+
+      <!-- Card 1 -->
+      <div class="col d-flex justify-content-center">
+        <div class="product-card card h-100" style="width:18rem; height:28rem;">
+          <div class="card-img-container" style="height:12rem; overflow:hidden;">
+            <img src="./img/h1.jpeg" alt="Black Pepper" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <div class="card-body d-flex flex-column">
+            <h5  class="card-title product-name">Black Pepper 🌶️</h5>
+            <p>Freshly ground black pepper, adds rich flavor.</p>
+            <button class="btn btn-success mt-auto add-to-cart"  onclick="addToCart()" 
+                    data-name="Black Pepper"
+                    data-price="1.8"
+                    data-img="./img/h1.jpeg">
+              Add to Cart
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="col d-flex justify-content-center">
+        <div class="product-card card h-100" style="width:18rem; height:28rem;">
+          <div class="card-img-container" style="height:12rem; overflow:hidden;">
+            <img src="./img/h2.jpeg" alt="Chili Powder" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <div class="card-body d-flex flex-column">
+            <h5  class="card-title product-name">Chili Powder 🌶️</h5>
+            <p>Hot chili powder, perfect for spicy dishes.</p>
+            <button class="btn btn-success mt-auto add-to-cart"  onclick="addToCart()" 
+                    data-name="Chili Powder"
+                    data-price="2.0"
+                    data-img="./img/h2.jpeg">
+              Add to Cart
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="col d-flex justify-content-center">
+        <div class="product-card card h-100" style="width:18rem; height:28rem;">
+          <div class="card-img-container" style="height:12rem; overflow:hidden;">
+            <img src="./img/h3.jpeg" alt="Cumin" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <div class="card-body d-flex flex-column">
+            <h5  class="card-title product-name">Cumin 🌿</h5>
+            <p>Aromatic cumin spice, essential for many recipes.</p>
+            <button class="btn btn-success mt-auto add-to-cart"  onclick="addToCart()" 
+                    data-name="Cumin"
+                    data-price="1.5"
+                    data-img="./img/h3.jpeg">
+              Add to Cart
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="col d-flex justify-content-center">
+        <div class="product-card card h-100" style="width:18rem; height:28rem;">
+          <div class="card-img-container" style="height:12rem; overflow:hidden;">
+            <img src="./img/h4.jpeg" alt="Turmeric" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <div class="card-body d-flex flex-column">
+            <h5  class="card-title product-name">Turmeric 🌼</h5>
+            <p>Healthy turmeric powder, rich in antioxidants.</p>
+            <button class="btn btn-success mt-auto add-to-cart"  onclick="addToCart()" 
+                    data-name="Turmeric"
+                    data-price="1.7"
+                    data-img="./img/h4.jpeg">
+              Add to Cart
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="col d-flex justify-content-center">
+        <div class="product-card card h-100" style="width:18rem; height:28rem;">
+          <div class="card-img-container" style="height:12rem; overflow:hidden;">
+            <img src="./img/h5.jpeg" alt="Basil" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <div class="card-body d-flex flex-column">
+            <h5  class="card-title product-name">Basil 🌿</h5>
+            <p>Dried basil herbs, perfect for Italian dishes.</p>
+            <button class="btn btn-success mt-auto add-to-cart"  onclick="addToCart()" 
+                    data-name="Basil"
+                    data-price="1.9"
+                    data-img="./img/h5.jpeg">
+              Add to Cart
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="col d-flex justify-content-center">
+        <div class="product-card card h-100" style="width:18rem; height:28rem;">
+          <div class="card-img-container" style="height:12rem; overflow:hidden;">
+            <img src="./img/h6.jpeg" alt="Oregano" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <div class="card-body d-flex flex-column">
+            <h5  class="card-title product-name">Oregano 🌿</h5>
+            <p>Dried oregano, essential for pizza and pasta.</p>
+            <button class="btn btn-success mt-auto add-to-cart"  onclick="addToCart()" 
+                    data-name="Oregano"
+                    data-price="1.6"
+                    data-img="./img/h6.jpeg">
+              Add to Cart
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <a href="./shopping.html" class="btn btn-outline-danger mt-5 mb-5">
+      Back to shopping
+    </a>
+  </div>
+</section>
+
+<section id="Juices">
+  <div class="container text-center my-5">
+    <h1 class="bg-danger text-white mb-5 py-3">Juices 🧃</h1>
+
+    <div class="row row-cols-1 row-cols-md-3 g-4 justify-content-center">
+
+      <!-- Card 1 -->
+      <div class="col d-flex justify-content-center">
+        <div class="product-card card h-100" style="width:18rem; height:28rem;">
+          <div class="card-img-container" style="height:12rem; overflow:hidden;">
+            <img src="./img/j1.jpeg" alt="Orange Juice" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <div class="card-body d-flex flex-column">
+            <h5  class="card-title product-name">Orange Juice 🍊</h5>
+            <p>Fresh orange juice, rich in vitamin C.</p>
+            <button class="btn btn-success mt-auto add-to-cart"  onclick="addToCart()" 
+                    data-name="Orange Juice"
+                    data-price="2.5"
+                    data-img="./img/j1.jpeg">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="col d-flex justify-content-center">
+        <div class="product-card card h-100" style="width:18rem; height:28rem;">
+          <div class="card-img-container" style="height:12rem; overflow:hidden;">
+            <img src="./img/j2.jpeg" alt="Apple Juice" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <div class="card-body d-flex flex-column">
+            <h5  class="card-title product-name">Apple Juice 🍎</h5>
+            <p>Natural apple juice with no added sugar.</p>
+            <button class="btn btn-success mt-auto add-to-cart"  onclick="addToCart()" 
+                    data-name="Apple Juice"
+                    data-price="2.3"
+                    data-img="./img/j2.jpeg">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="col d-flex justify-content-center">
+        <div class="product-card card h-100" style="width:18rem; height:28rem;">
+          <div class="card-img-container" style="height:12rem; overflow:hidden;">
+            <img src="./img/j3.jpeg" alt="Mango Juice" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <div class="card-body d-flex flex-column">
+            <h5  class="card-title product-name">Mango Juice 🥭</h5>
+            <p>Sweet mango juice, refreshing and delicious.</p>
+            <button class="btn btn-success mt-auto add-to-cart"  onclick="addToCart()" 
+                    data-name="Mango Juice"
+                    data-price="2.8"
+                    data-img="./img/j3.jpeg">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="col d-flex justify-content-center">
+        <div class="product-card card h-100" style="width:18rem; height:28rem;">
+          <div class="card-img-container" style="height:12rem; overflow:hidden;">
+            <img src="./img/j4.jpeg" alt="Strawberry Juice" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <div class="card-body d-flex flex-column">
+            <h5  class="card-title product-name">Strawberry Juice 🍓</h5>
+            <p>Fresh strawberry juice, sweet and smooth.</p>
+            <button class="btn btn-success mt-auto add-to-cart"  onclick="addToCart()" 
+                    data-name="Strawberry Juice"
+                    data-price="2.6"
+                    data-img="./img/j4.jpeg">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="col d-flex justify-content-center">
+        <div class="product-card card h-100" style="width:18rem; height:28rem;">
+          <div class="card-img-container" style="height:12rem; overflow:hidden;">
+            <img src="./img/j5.jpeg" alt="Pineapple Juice" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <div class="card-body d-flex flex-column">
+            <h5  class="card-title product-name">Pineapple Juice 🍍</h5>
+            <p>Tropical pineapple juice, naturally refreshing.</p>
+            <button class="btn btn-success mt-auto add-to-cart"  onclick="addToCart()" 
+                    data-name="Pineapple Juice"
+                    data-price="2.7"
+                    data-img="./img/j5.jpeg">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="col d-flex justify-content-center">
+        <div class="product-card card h-100" style="width:18rem; height:28rem;">
+          <div class="card-img-container" style="height:12rem; overflow:hidden;">
+            <img src="./img/j6.jpeg" alt="Mixed Fruit Juice" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <div class="card-body d-flex flex-column">
+            <h5  class="card-title product-name">Mixed Fruit Juice 🍹</h5>
+            <p>A mix of fresh fruits, healthy and tasty.</p>
+            <button class="btn btn-success mt-auto add-to-cart"  onclick="addToCart()" 
+                    data-name="Mixed Fruit Juice"
+                    data-price="3.0"
+                    data-img="./img/j6.jpeg">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <a href="./shopping.html" class="btn btn-outline-danger mt-5 mb-5">Back to shopping</a>
+  </div>
+</section>
+
+<section id="Water">
+  <div class="container text-center my-5">
+    <h1 class="bg-primary text-white mb-5 py-3">Water 🥤</h1>
+
+    <div class="row row-cols-1 row-cols-md-3 g-4 justify-content-center">
+
+      <!-- Card 1 -->
+      <div class="col d-flex justify-content-center">
+        <div class="product-card card h-100" style="width:18rem; height:28rem;">
+          <div class="card-img-container" style="height:12rem; overflow:hidden;">
+            <img src="./img/w1.jpeg" alt="Mineral Water Small" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <div class="card-body d-flex flex-column">
+            <h5  class="card-title product-name">Mineral Water 500ml 💧</h5>
+            <p>Pure mineral water, perfect for daily hydration.</p>
+            <button class="btn btn-success mt-auto add-to-cart"  onclick="addToCart()" 
+                    data-name="Mineral Water 500ml"
+                    data-price="1.0"
+                    data-img="./img/w1.jpeg">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="col d-flex justify-content-center">
+        <div class="product-card card h-100" style="width:18rem; height:28rem;">
+          <div class="card-img-container" style="height:12rem; overflow:hidden;">
+            <img src="./img/w2.jpeg" alt="Mineral Water 1.5L" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <div class="card-body d-flex flex-column">
+            <h5  class="card-title product-name">Mineral Water 1.5L 💦</h5>
+            <p>Large bottle, ideal for home and trips.</p>
+            <button class="btn btn-success mt-auto add-to-cart"  onclick="addToCart()" 
+                    data-name="Mineral Water 1.5L"
+                    data-price="2.0"
+                    data-img="./img/w2.jpeg">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="col d-flex justify-content-center">
+        <div class="product-card card h-100" style="width:18rem; height:28rem;">
+          <div class="card-img-container" style="height:12rem; overflow:hidden;">
+            <img src="./img/w3.jpeg" alt="Sparkling Water" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <div class="card-body d-flex flex-column">
+            <h5  class="card-title product-name">Sparkling Water ✨</h5>
+            <p>Refreshing sparkling water with bubbles.</p>
+            <button class="btn btn-success mt-auto add-to-cart"  onclick="addToCart()" 
+                    data-name="Sparkling Water"
+                    data-price="2.5"
+                    data-img="./img/w3.jpeg">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="col d-flex justify-content-center">
+        <div class="product-card card h-100" style="width:18rem; height:28rem;">
+          <div class="card-img-container" style="height:12rem; overflow:hidden;">
+            <img src="./img/w4.jpeg" alt="Distilled Water" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <div class="card-body d-flex flex-column">
+            <h5  class="card-title product-name">Distilled Water 🧪</h5>
+            <p>Pure distilled water for special uses.</p>
+            <button class="btn btn-success mt-auto add-to-cart"  onclick="addToCart()" 
+                    data-name="Distilled Water"
+                    data-price="1.8"
+                    data-img="./img/w4.jpeg">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="col d-flex justify-content-center">
+        <div class="product-card card h-100" style="width:18rem; height:28rem;">
+          <div class="card-img-container" style="height:12rem; overflow:hidden;">
+            <img src="./img/w5.jpeg" alt="Flavored Water" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <div class="card-body d-flex flex-column">
+            <h5  class="card-title product-name">Flavored Water 🍋</h5>
+            <p>Light flavored water with lemon taste.</p>
+            <button class="btn btn-success mt-auto add-to-cart"  onclick="addToCart()" 
+                    data-name="Flavored Water"
+                    data-price="2.2"
+                    data-img="./img/w5.jpeg">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <a href="./shopping.html" class="btn btn-outline-danger mt-5 mb-5">Back to shopping</a>
+  </div>
+</section>
+
+<section id="Carbonated-drinks">
+  <div class="container text-center my-5">
+    <h1 class="bg-danger text-white mb-5 py-3">Carbonated Drinks 🍺</h1>
+
+    <div class="row row-cols-1 row-cols-md-3 g-4 justify-content-center">
+
+      <!-- Card 1 -->
+      <div class="col d-flex justify-content-center">
+        <div class="product-card card h-100" style="width:18rem; height:28rem;">
+          <div class="card-img-container" style="height:12rem; overflow:hidden;">
+            <img src="./img/cd1.jpeg" alt="Cola" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <div class="card-body d-flex flex-column">
+            <h5  class="card-title product-name">Cola 🥤</h5>
+            <p>Classic refreshing cola drink.</p>
+            <button class="btn btn-success mt-auto add-to-cart"  onclick="addToCart()" 
+              data-name="Cola"
+              data-price="5.0"
+              data-img="./img/cd1.jpeg">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="col d-flex justify-content-center">
+        <div class="product-card card h-100" style="width:18rem; height:28rem;">
+          <div class="card-img-container" style="height:12rem; overflow:hidden;">
+            <img src="./img/cd2.jpeg" alt="Orange Soda" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <div class="card-body d-flex flex-column">
+            <h5  class="card-title product-name">Orange Soda 🍊</h5>
+            <p>Sweet orange flavored soda.</p>
+            <button class="btn btn-success mt-auto add-to-cart"  onclick="addToCart()" 
+              data-name="Orange Soda"
+              data-price="4.5"
+              data-img="./img/cd2.jpeg">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="col d-flex justify-content-center">
+        <div class="product-card card h-100" style="width:18rem; height:28rem;">
+          <div class="card-img-container" style="height:12rem; overflow:hidden;">
+            <img src="./img/cd3.jpeg" alt="Lemon Soda" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <div class="card-body d-flex flex-column">
+            <h5  class="card-title product-name">Lemon Soda 🍋</h5>
+            <p>Refreshing lemon taste with bubbles.</p>
+            <button class="btn btn-success mt-auto add-to-cart"  onclick="addToCart()" 
+              data-name="Lemon Soda"
+              data-price="4.0"
+              data-img="./img/cd3.jpeg">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="col d-flex justify-content-center">
+        <div class="product-card card h-100" style="width:18rem; height:28rem;">
+          <div class="card-img-container" style="height:12rem; overflow:hidden;">
+            <img src="./img/cd4.jpeg" alt="Ginger Ale" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <div class="card-body d-flex flex-column">
+            <h5  class="card-title product-name">Ginger Ale 🌿</h5>
+            <p>Light ginger flavored soda.</p>
+            <button class="btn btn-success mt-auto add-to-cart"  onclick="addToCart()" 
+              data-name="Ginger Ale"
+              data-price="4.8"
+              data-img="./img/cd4.jpeg">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="col d-flex justify-content-center">
+        <div class="product-card card h-100" style="width:18rem; height:28rem;">
+          <div class="card-img-container" style="height:12rem; overflow:hidden;">
+            <img src="./img/cd5.jpeg" alt="Energy Soda" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <div class="card-body d-flex flex-column">
+            <h5  class="card-title product-name">Energy Soda ⚡</h5>
+            <p>Carbonated energy drink.</p>
+            <button class="btn btn-success mt-auto add-to-cart"  onclick="addToCart()" 
+              data-name="Energy Soda"
+              data-price="6.0"
+              data-img="./img/cd5.jpeg">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <a href="./shopping.html" class="btn btn-outline-danger mt-5 mb-5">Back to shopping</a>
+  </div>
+</section>
+
+<section id="Household-cleaning">
+  <div class="container text-center my-5">
+    <h1 class="bg-primary text-white mb-5 py-3">Household Cleaning 🧽</h1>
+
+    <div class="row row-cols-1 row-cols-md-3 g-4 justify-content-center">
+
+      <!-- Card 1 -->
+      <div class="col d-flex justify-content-center">
+        <div class="product-card card h-100" style="width:18rem; height:28rem;">
+          <div class="card-img-container" style="height:12rem; overflow:hidden;">
+            <img src="./img/t1.jpeg" alt="Dishwashing Liquid" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <div class="card-body d-flex flex-column">
+            <h5  class="card-title product-name">Dishwashing Liquid 🍽️</h5>
+            <p>Powerful grease-cutting dish soap.</p>
+            <button class="btn btn-success mt-auto add-to-cart"  onclick="addToCart()" 
+              data-name="Dishwashing Liquid"
+              data-price="12.0"
+              data-img="./img/t1.jpeg">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="col d-flex justify-content-center">
+        <div class="product-card card h-100" style="width:18rem; height:28rem;">
+          <div class="card-img-container" style="height:12rem; overflow:hidden;">
+            <img src="./img/t2.jpeg" alt="Laundry Detergent" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <div class="card-body d-flex flex-column">
+            <h5  class="card-title product-name">Laundry Detergent 👕</h5>
+            <p>Deep cleaning detergent for clothes.</p>
+            <button class="btn btn-success mt-auto add-to-cart"  onclick="addToCart()" 
+              data-name="Laundry Detergent"
+              data-price="25.0"
+              data-img="./img/t2.jpeg">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="col d-flex justify-content-center">
+        <div class="product-card card h-100" style="width:18rem; height:28rem;">
+          <div class="card-img-container" style="height:12rem; overflow:hidden;">
+            <img src="./img/t3.jpeg" alt="Floor Cleaner" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <div class="card-body d-flex flex-column">
+            <h5  class="card-title product-name">Floor Cleaner 🧹</h5>
+            <p>Fresh scented cleaner for all floors.</p>
+            <button class="btn btn-success mt-auto add-to-cart"  onclick="addToCart()" 
+              data-name="Floor Cleaner"
+              data-price="18.0"
+              data-img="./img/t3.jpeg">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="col d-flex justify-content-center">
+        <div class="product-card card h-100" style="width:18rem; height:28rem;">
+          <div class="card-img-container" style="height:12rem; overflow:hidden;">
+            <img src="./img/t4.jpeg" alt="Glass Cleaner" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <div class="card-body d-flex flex-column">
+            <h5  class="card-title product-name">Glass Cleaner 🪟</h5>
+            <p>Leaves glass shiny and streak-free.</p>
+            <button class="btn btn-success mt-auto add-to-cart"  onclick="addToCart()" 
+              data-name="Glass Cleaner"
+              data-price="10.0"
+              data-img="./img/t4.jpeg">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="col d-flex justify-content-center">
+        <div class="product-card card h-100" style="width:18rem; height:28rem;">
+          <div class="card-img-container" style="height:12rem; overflow:hidden;">
+            <img src="./img/t5.jpeg" alt="Disinfectant Spray" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <div class="card-body d-flex flex-column">
+            <h5  class="card-title product-name">Disinfectant Spray 🦠</h5>
+            <p>Kills germs and bacteria effectively.</p>
+            <button class="btn btn-success mt-auto add-to-cart"  onclick="addToCart()" 
+              data-name="Disinfectant Spray"
+              data-price="15.0"
+              data-img="./img/t5.jpeg">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="col d-flex justify-content-center">
+        <div class="product-card card h-100" style="width:18rem; height:28rem;">
+          <div class="card-img-container" style="height:12rem; overflow:hidden;">
+            <img src="./img/t6.jpeg" alt="Toilet Cleaner" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <div class="card-body d-flex flex-column">
+            <h5  class="card-title product-name">Toilet Cleaner 🚽</h5>
+            <p>Strong cleaner for toilet hygiene.</p>
+            <button class="btn btn-success mt-auto add-to-cart"  onclick="addToCart()" 
+              data-name="Toilet Cleaner"
+              data-price="11.0"
+              data-img="./img/t6.jpeg">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <a href="./shopping.html" class="btn btn-outline-danger mt-5 mb-5">Back to shopping</a>
+  </div>
+</section>
+
+
+<section id="Personal-care">
+  <div class="container text-center my-5">
+    <h1 class="bg-info text-white mb-5 py-3">Personal Care 🧴</h1>
+
+    <div class="row row-cols-1 row-cols-md-3 g-4 justify-content-center">
+
+      <!-- Card 1 -->
+      <div class="col d-flex justify-content-center">
+        <div class="product-card card h-100" style="width: 18rem; height: 28rem;">
+          <div class="card-img-container" style="height:12rem; overflow:hidden;">
+            <img src="./img/p1.jpeg" alt="Shampoo" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <div class="card-body d-flex flex-column">
+            <h5  class="card-title product-name">Shampoo 🧼</h5>
+            <p>Nourishing shampoo for healthy hair.</p>
+            <button class="btn btn-success mt-auto add-to-cart"  onclick="addToCart()" 
+              data-name="Shampoo"
+              data-price="35.0"
+              data-img="./img/p1.jpeg">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="col d-flex justify-content-center">
+        <div class="product-card card h-100" style="width: 18rem; height: 28rem;">
+          <div class="card-img-container" style="height:12rem; overflow:hidden;">
+            <img src="./img/p2.jpeg" alt="Conditioner" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <div class="card-body d-flex flex-column">
+            <h5  class="card-title product-name">Conditioner 💆‍♀️</h5>
+            <p>Smooth and soft hair conditioner.</p>
+            <button class="btn btn-success mt-auto add-to-cart"  onclick="addToCart()" 
+              data-name="Conditioner"
+              data-price="32.0"
+              data-img="./img/p2.jpeg">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="col d-flex justify-content-center">
+        <div class="product-card card h-100" style="width: 18rem; height: 28rem;">
+          <div class="card-img-container" style="height:12rem; overflow:hidden;">
+            <img src="./img/p3.jpeg" alt="Body Lotion" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <div class="card-body d-flex flex-column">
+            <h5  class="card-title product-name">Body Lotion 🧴</h5>
+            <p>Moisturizing lotion for soft skin.</p>
+            <button class="btn btn-success mt-auto add-to-cart"  onclick="addToCart()" 
+              data-name="Body Lotion"
+              data-price="40.0"
+              data-img="./img/p3.jpeg">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="col d-flex justify-content-center">
+        <div class="product-card card h-100" style="width: 18rem; height: 28rem;">
+          <div class="card-img-container" style="height:12rem; overflow:hidden;">
+            <img src="./img/p4.jpeg" alt="Toothpaste" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <div class="card-body d-flex flex-column">
+            <h5  class="card-title product-name">Toothpaste 😁</h5>
+            <p>Protects teeth and freshens breath.</p>
+            <button class="btn btn-success mt-auto add-to-cart"  onclick="addToCart()" 
+              data-name="Toothpaste"
+              data-price="18.0"
+              data-img="./img/p4.jpeg">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="col d-flex justify-content-center">
+        <div class="product-card card h-100" style="width: 18rem; height: 28rem;">
+          <div class="card-img-container" style="height:12rem; overflow:hidden;">
+            <img src="./img/p5.jpeg" alt="Soap" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <div class="card-body d-flex flex-column">
+            <h5  class="card-title product-name">Soap 🧽</h5>
+            <p>Gentle soap for daily use.</p>
+            <button class="btn btn-success mt-auto add-to-cart"  onclick="addToCart()" 
+              data-name="Soap"
+              data-price="10.0"
+              data-img="./img/p5.jpeg">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="col d-flex justify-content-center">
+        <div class="product-card card h-100" style="width: 18rem; height: 28rem;">
+          <div class="card-img-container" style="height:12rem; overflow:hidden;">
+            <img src="./img/p6.jpeg" alt="Deodorant" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <div class="card-body d-flex flex-column">
+            <h5  class="card-title product-name">Deodorant 🌸</h5>
+            <p>Long-lasting freshness and protection.</p>
+            <button class="btn btn-success mt-auto add-to-cart"  onclick="addToCart()" 
+              data-name="Deodorant"
+              data-price="22.0"
+              data-img="./img/p6.jpeg">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <a href="./shopping.html" class="btn btn-outline-danger mt-5 mb-5">Back to shopping</a>
+  </div>
+</section>
+
+<section id="Baby-essentials">
+  <div class="container text-center my-5">
+    <h1 class="bg-warning text-dark mb-5 py-3">Baby Essentials 👶</h1>
+
+    <div class="row row-cols-1 row-cols-md-3 g-4 justify-content-center">
+
+      <!-- Card 1 -->
+      <div class="col d-flex justify-content-center">
+        <div class="product-card card h-100" style="width: 18rem; height:28rem;">
+          <div class="card-img-container" style="height:12rem; overflow:hidden;">
+            <img src="./img/y1.jpeg" alt="Baby Diapers" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <div class="card-body d-flex flex-column">
+            <h5  class="card-title product-name">Baby Diapers 🍼</h5>
+            <p>Soft and comfortable diapers for babies.</p>
+            <button class="btn btn-success mt-auto add-to-cart"  onclick="addToCart()" 
+              data-name="Baby Diapers"
+              data-price="80.0"
+              data-img="./img/y1.jpeg">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="col d-flex justify-content-center">
+        <div class="product-card card h-100" style="width: 18rem; height:28rem;">
+          <div class="card-img-container" style="height:12rem; overflow:hidden;">
+            <img src="./img/y2.jpeg" alt="Baby Milk Formula" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <div class="card-body d-flex flex-column">
+            <h5  class="card-title product-name">Baby Milk Formula 🍼</h5>
+            <p>Nutritious milk formula for healthy growth.</p>
+            <button class="btn btn-success mt-auto add-to-cart"  onclick="addToCart()" 
+              data-name="Baby Milk Formula"
+              data-price="120.0"
+              data-img="./img/y2.jpeg">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="col d-flex justify-content-center">
+        <div class="product-card card h-100" style="width: 18rem; height:28rem;">
+          <div class="card-img-container" style="height:12rem; overflow:hidden;">
+            <img src="./img/y3.jpeg" alt="Baby Wipes" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <div class="card-body d-flex flex-column">
+            <h5  class="card-title product-name">Baby Wipes 🧻</h5>
+            <p>Gentle wipes for baby’s sensitive skin.</p>
+            <button class="btn btn-success mt-auto add-to-cart"  onclick="addToCart()" 
+              data-name="Baby Wipes"
+              data-price="35.0"
+              data-img="./img/y3.jpeg">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="col d-flex justify-content-center">
+        <div class="product-card card h-100" style="width: 18rem; height:28rem;">
+          <div class="card-img-container" style="height:12rem; overflow:hidden;">
+            <img src="./img/y4.jpeg" alt="Baby Shampoo" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <div class="card-body d-flex flex-column">
+            <h5  class="card-title product-name">Baby Shampoo 🧼</h5>
+            <p>Tear-free shampoo for baby hair.</p>
+            <button class="btn btn-success mt-auto add-to-cart"  onclick="addToCart()" 
+              data-name="Baby Shampoo"
+              data-price="30.0"
+              data-img="./img/y4.jpeg">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="col d-flex justify-content-center">
+        <div class="product-card card h-100" style="width: 18rem; height:28rem;">
+          <div class="card-img-container" style="height:12rem; overflow:hidden;">
+            <img src="./img/y5.jpeg" alt="Baby Lotion" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <div class="card-body d-flex flex-column">
+            <h5  class="card-title product-name">Baby Lotion 🧴</h5>
+            <p>Moisturizes and protects baby skin.</p>
+            <button class="btn btn-success mt-auto add-to-cart"  onclick="addToCart()" 
+              data-name="Baby Lotion"
+              data-price="28.0"
+              data-img="./img/y5.jpeg">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="col d-flex justify-content-center">
+        <div class="product-card card h-100" style="width: 18rem; height:28rem;">
+          <div class="card-img-container" style="height:12rem; overflow:hidden;">
+            <img src="./img/y6.jpeg" alt="Baby Powder" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <div class="card-body d-flex flex-column">
+            <h5  class="card-title product-name">Baby Powder 🌸</h5>
+            <p>Keeps baby fresh and dry.</p>
+            <button class="btn btn-success mt-auto add-to-cart"  onclick="addToCart()" 
+              data-name="Baby Powder"
+              data-price="20.0"
+              data-img="./img/y6.jpeg">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <a href="./shopping.html" class="btn btn-outline-danger mt-5 mb-5">Back to shopping</a>
+  </div>
+</section>
+
+<section id="Pet-accessories">
+  <div class="container text-center my-5">
+    <h1 class="bg-success text-white mb-5 py-3">Pet Accessories 🐶🐱</h1>
+
+    <div class="row row-cols-1 row-cols-md-3 g-4 justify-content-center">
+
+      <!-- Card 1 -->
+      <div class="col d-flex justify-content-center">
+        <div class="product-card card h-100" style="width:18rem; height:28rem;">
+          <div class="card-img-container" style="height:12rem; overflow:hidden;">
+            <img src="./img/pa1.jpeg" alt="Dog Collar" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <div class="card-body d-flex flex-column">
+            <h5  class="card-title product-name">Dog Collar 🐕</h5>
+            <p>Durable and adjustable collar for dogs.</p>
+            <button class="btn btn-success mt-auto add-to-cart"  onclick="addToCart()" 
+              data-name="Dog Collar"
+              data-price="25.0"
+              data-img="./img/pa1.jpeg">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="col d-flex justify-content-center">
+        <div class="product-card card h-100" style="width:18rem; height:28rem;">
+          <div class="card-img-container" style="height:12rem; overflow:hidden;">
+            <img src="./img/pa2.jpeg" alt="Cat Collar" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <div class="card-body d-flex flex-column">
+            <h5  class="card-title product-name">Cat Collar 🐈</h5>
+            <p>Comfortable collar with a small bell.</p>
+            <button class="btn btn-success mt-auto add-to-cart"  onclick="addToCart()" 
+              data-name="Cat Collar"
+              data-price="20.0"
+              data-img="./img/pa2.jpeg">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="col d-flex justify-content-center">
+        <div class="product-card card h-100" style="width:18rem; height:28rem;">
+          <div class="card-img-container" style="height:12rem; overflow:hidden;">
+            <img src="./img/pa3.jpeg" alt="Dog Leash" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <div class="card-body d-flex flex-column">
+            <h5  class="card-title product-name">Dog Leash 🐕‍🦺</h5>
+            <p>Strong leash for walking dogs safely.</p>
+            <button class="btn btn-success mt-auto add-to-cart"  onclick="addToCart()" 
+              data-name="Dog Leash"
+              data-price="30.0"
+              data-img="./img/pa3.jpeg">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="col d-flex justify-content-center">
+        <div class="product-card card h-100" style="width:18rem; height:28rem;">
+          <div class="card-img-container" style="height:12rem; overflow:hidden;">
+            <img src="./img/pa4.jpeg" alt="Pet Bowl" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <div class="card-body d-flex flex-column">
+            <h5  class="card-title product-name">Pet Bowl 🥣</h5>
+            <p>Durable bowl for food and water.</p>
+            <button class="btn btn-success mt-auto add-to-cart"  onclick="addToCart()" 
+              data-name="Pet Bowl"
+              data-price="18.0"
+              data-img="./img/pa4.jpeg">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="col d-flex justify-content-center">
+        <div class="product-card card h-100" style="width:18rem; height:28rem;">
+          <div class="card-img-container" style="height:12rem; overflow:hidden;">
+            <img src="./img/pa5.jpeg" alt="Pet Toy" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <div class="card-body d-flex flex-column">
+            <h5  class="card-title product-name">Pet Toy 🧸</h5>
+            <p>Fun toy for pets to play and stay active.</p>
+            <button class="btn btn-success mt-auto add-to-cart"  onclick="addToCart()" 
+              data-name="Pet Toy"
+              data-price="22.0"
+              data-img="./img/pa5.jpeg">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="col d-flex justify-content-center">
+        <div class="product-card card h-100" style="width:18rem; height:28rem;">
+          <div class="card-img-container" style="height:12rem; overflow:hidden;">
+            <img src="./img/pa6.jpeg" alt="Pet Bed" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <div class="card-body d-flex flex-column">
+            <h5  class="card-title product-name">Pet Bed 🛏️</h5>
+            <p>Comfortable bed for cats and small dogs.</p>
+            <button class="btn btn-success mt-auto add-to-cart"  onclick="addToCart()" 
+              data-name="Pet Bed"
+              data-price="80.0"
+              data-img="./img/pa6.jpeg">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <a href="./shopping.html" class="btn btn-outline-danger mt-5 mb-5">Back to shopping</a>
+  </div>
+</section>
+<footer class="footer">
+  <div class="footer-container">
+
+    <div class="footer-box about">
+      <h3>Fresh Mart</h3>
+      <p>Your daily needs, fresh and fast. We provide fresh products delivered right to your door.</p>
+    </div>
+
+    <div class="footer-box contact">
+      <h4>Contact Us</h4>
+      <ul>
+        <li>📍 Cairo, Egypt</li>
+        <li>📞 <a href="tel:01012345678">01012345678</a></li>
+        <li>✉ <a href="mailto:freshmart@gmail.com">freshmart@gmail.com</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-box hours">
+      <h4>Working Hours</h4>
+      <ul>
+        <li>Daily: 8 AM – 12 AM</li>
+        <li>Delivery Available</li>
+      </ul>
+    </div>
+
+    <div class="footer-box links">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Products</a></li>
+        <li><a href="#">Offers</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+  <p class="copy">© 2026 Fresh Mart. All Rights Reserved.</p>
+</footer>
+<script src="./js/bootstrap.bundle.min.js"></script>
+<script src="./js/theme.js"></script>
+
+<script src="./js/start.js"></script>
+</body>
+</html>
